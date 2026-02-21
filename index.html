@@ -149,6 +149,165 @@
     }
 
     a { color: #1a5276; }
+
+    /* ── Journey map styles ──────── */
+    .journey-banner {
+      padding: 1rem 1.2rem;
+      color: #fff;
+      margin: 1.5rem 0 0.8rem;
+      border-radius: 4px;
+    }
+    .journey-banner h4 {
+      color: #fff;
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 0.2rem;
+    }
+    .journey-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      margin: 0;
+      font-style: italic;
+    }
+    .banner-navy { background: #1a3c5e; }
+    .banner-teal { background: #1a7a6e; }
+    .banner-amber { background: #b05218; }
+    
+    .journey-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.82rem;
+    }
+    .journey-table th {
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .journey-table td {
+      padding: 0.55rem 0.6rem;
+      border: 1px solid #ddd;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .journey-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+    .th-navy { background: #1a3c5e; }
+    .th-teal { background: #1a7a6e; }
+    .th-amber { background: #b05218; }
+    
+    .emotion-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .emo-negative { background: #b71c1c; }
+    .emo-mixed { background: #e65100; }
+    .emo-neutral { background: #666; }
+    .emo-positive { background: #2e7d32; }
+    
+    /* Emotional arc chart */
+    .arc-container {
+      background: #f8f8f8;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 1rem 1.2rem 0.8rem;
+      margin: 1rem 0 1.2rem;
+    }
+    .arc-container h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0 0 0.8rem;
+      color: #444;
+    }
+    .arc-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      height: 120px;
+      padding-bottom: 1.6rem;
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      margin-left: 2rem;
+    }
+    .arc-y-labels {
+      position: absolute;
+      left: -2rem;
+      top: 0;
+      bottom: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.65rem;
+      color: #999;
+    }
+    .arc-bar-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      position: relative;
+    }
+    .arc-bar {
+      width: 22px;
+      border-radius: 3px 3px 0 0;
+      min-height: 4px;
+      transition: height 0.3s;
+    }
+    .arc-bar-label {
+      position: absolute;
+      bottom: -1.5rem;
+      font-size: 0.6rem;
+      color: #777;
+      white-space: nowrap;
+      transform: rotate(-30deg);
+      transform-origin: top left;
+      left: 50%;
+    }
+    .arc-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 1.6rem;
+      pointer-events: none;
+    }
+    .arc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, 50%);
+    }
+    
+    /* Insight box */
+    .insight-box {
+      border-left: 3px solid #999;
+      background: #f8f8f8;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.88rem;
+    }
+    .insight-box strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .insight-navy { border-left-color: #1a3c5e; }
+    .insight-teal { border-left-color: #1a7a6e; }
+    .insight-amber { border-left-color: #b05218; }
   </style>
 </head>
 <body>
@@ -560,8 +719,368 @@
 </ul>
 
   <h2 class="section-heading" id="journeys">4. User Journey Maps</h2>
-  <p><em>Coming next.</em></p>
-  <hr>
+
+<p>User journey maps translate persona research into a lived experience. By following a specific user through a realistic task, they surface friction points that persona profiles alone cannot reveal. Each map covers a scenario, a step-by-step touchpoint table, and a visualised emotional arc.</p>
+
+<!-- ════════════════════════════════════════ -->
+<!-- JOURNEY 1 — PRIYA                       -->
+<!-- ════════════════════════════════════════ -->
+<h3>4.1 Journey 1 — Priya Sharma</h3>
+
+<div class="journey-banner banner-navy">
+  <h4>Priya Sharma — 27, Edinburgh — ADHD, ASD, Migraines</h4>
+  <p>Scenario: A difficult morning, staying on top of her medication schedule and messaging her GP about a review</p>
+</div>
+
+<h4>Scenario &amp; expectations</h4>
+<p>It is a Tuesday morning. Priya woke late after a disrupted night and is feeling dysregulated. She has three medications due today on different schedules and is not certain which she has already taken. She also needs to contact her GP to request a medication review: something she has been putting off for weeks because she dislikes making phone calls. She opens HealthApp hoping to see a clear summary of today's doses, confirm what she has taken, and send a message to her GP without navigating complex menus.</p>
+
+<h4>Touchpoint map</h4>
+
+<table class="journey-table">
+  <tr>
+    <th class="th-navy">Stage</th>
+    <th class="th-navy">Channel</th>
+    <th class="th-navy">User Action</th>
+    <th class="th-navy">Pain Points</th>
+    <th class="th-navy">Emotion</th>
+  </tr>
+  <tr>
+    <td><strong>1. Trigger</strong><br>Missed alarm</td>
+    <td>Smartphone</td>
+    <td>Priya realises she slept through her medication reminder. She opens HealthApp to check her status.</td>
+    <td>Generic alarms become background noise over time. She needs a persistent, contextual reminder.</td>
+    <td><span class="emotion-tag emo-negative">Anxious</span></td>
+  </tr>
+  <tr>
+    <td><strong>2. Home Screen</strong><br>Dashboard</td>
+    <td>App — Home</td>
+    <td>The home screen shows today's medications and their status at a glance: taken, due, or missed.</td>
+    <td>Previous apps required multiple menus to see this view, causing her to give up.</td>
+    <td><span class="emotion-tag emo-neutral">Oriented</span></td>
+  </tr>
+  <tr>
+    <td><strong>3. Missed Dose</strong><br>Review</td>
+    <td>App — Med Tracker</td>
+    <td>She sees her first morning medication is marked as missed. She taps it to read guidance on late doses.</td>
+    <td>Without in-app guidance, she would search online or skip the dose without knowing if that is safe.</td>
+    <td><span class="emotion-tag emo-mixed">Unsure</span></td>
+  </tr>
+  <tr>
+    <td><strong>4. Dose Logged</strong><br>Confirmation</td>
+    <td>App — Med Tracker</td>
+    <td>She takes the medication and taps the large "Mark as Taken" button. A full-screen confirmation appears.</td>
+    <td>If confirmation required additional steps (rating pain, adding notes) she would abandon the flow.</td>
+    <td><span class="emotion-tag emo-positive">Relieved</span></td>
+  </tr>
+  <tr>
+    <td><strong>5. Upcoming</strong><br>Schedule view</td>
+    <td>App — Med Tracker</td>
+    <td>She checks remaining doses for the day. Two more are due: 1pm and 8pm. Displayed as a simple timeline.</td>
+    <td>Complex calendar views are difficult for her to parse quickly, especially on a hard day.</td>
+    <td><span class="emotion-tag emo-positive">Informed</span></td>
+  </tr>
+  <tr>
+    <td><strong>6. GP Message</strong><br>Compose</td>
+    <td>App — Messaging</td>
+    <td>She navigates to messaging and writes a short note to her GP asking for a medication review.</td>
+    <td>She avoided this for weeks because it required a phone call. Text removes the barrier entirely.</td>
+    <td><span class="emotion-tag emo-positive">Empowered</span></td>
+  </tr>
+  <tr>
+    <td><strong>7. Resolution</strong><br>End of session</td>
+    <td>App — Home</td>
+    <td>She returns to the home screen. Dashboard shows one dose taken and two upcoming. She closes the app.</td>
+    <td>No remaining friction. Session ended with a clear picture of the day and a message sent.</td>
+    <td><span class="emotion-tag emo-positive">Settled</span></td>
+  </tr>
+</table>
+
+<h4>Emotional arc</h4>
+
+<div class="arc-container">
+  <h4>Emotional Arc — Priya</h4>
+  <div class="arc-chart" style="position: relative;">
+    <div class="arc-y-labels">
+      <span>High</span>
+      <span>Mid</span>
+      <span>Low</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 20%; background: #b71c1c;"></div>
+      <span class="arc-bar-label">Missed alarm</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 50%; background: #666;"></div>
+      <span class="arc-bar-label">Dashboard</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 40%; background: #e65100;"></div>
+      <span class="arc-bar-label">Missed dose</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Dose logged</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Schedule</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">GP message</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Done</span>
+    </div>
+  </div>
+</div>
+
+<div class="insight-box insight-navy">
+  <strong>Key design insight</strong>
+  The steepest drop occurs at Stage 1, before the app is even opened. The reminder system must do more than fire a standard notification. Escalating or persistent reminders that remain visible until acted on would prevent the missed dose that triggers the anxiety spiral. The recovery to high satisfaction by Stage 6 depends directly on in-app messaging existing: without it, Priya has no low-friction route to her GP on a difficult day.
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- JOURNEY 2 — DEREK                       -->
+<!-- ════════════════════════════════════════ -->
+<h3>4.2 Journey 2 — Derek Walsh</h3>
+
+<div class="journey-banner banner-teal">
+  <h4>Derek Walsh — 67, Brecon, Wales — Dyslexia, Hearing Impairment, Type 2 Diabetes, Hypertension</h4>
+  <p>Scenario: Setting up his medication schedule for the first time and confirming an upcoming GP appointment</p>
+</div>
+
+<h4>Scenario &amp; expectations</h4>
+<p>Derek's adult daughter has helped him install HealthApp. Today he is setting it up himself for the first time: entering his two daily medications with the correct times, and checking that his upcoming GP appointment is listed so he will receive a reminder. He is cautious with new apps but motivated. He wants to manage his own medications without relying on his wife. He expects large text, clear icons, and audio support where needed.</p>
+
+<h4>Touchpoint map</h4>
+
+<table class="journey-table">
+  <tr>
+    <th class="th-teal">Stage</th>
+    <th class="th-teal">Channel</th>
+    <th class="th-teal">User Action</th>
+    <th class="th-teal">Pain Points</th>
+    <th class="th-teal">Emotion</th>
+  </tr>
+  <tr>
+    <td><strong>1. First Open</strong><br>Home screen</td>
+    <td>App — Home</td>
+    <td>Derek opens the app for the first time. The home screen shows two large tiles: "My Medications" and "My Appointments".</td>
+    <td>Apps with many options on the first screen overwhelm him. A focused home screen is essential.</td>
+    <td><span class="emotion-tag emo-neutral">Cautious</span></td>
+  </tr>
+  <tr>
+    <td><strong>2. Add Medication</strong><br>Entry screen</td>
+    <td>App — Med Setup</td>
+    <td>He taps "My Medications" then "Add Medication". He types the name of his first tablet using autocorrect suggestions.</td>
+    <td>Spelling medication names is difficult due to his dyslexia. Autocorrect reduces this barrier.</td>
+    <td><span class="emotion-tag emo-mixed">Focused</span></td>
+  </tr>
+  <tr>
+    <td><strong>3. Audio Support</strong><br>Instructions</td>
+    <td>App — Med Setup</td>
+    <td>He taps the audio icon next to a field he does not understand. A clear voice reads the label and explains what to enter.</td>
+    <td>Without audio support, he would enter wrong information or stop entirely and ask his wife.</td>
+    <td><span class="emotion-tag emo-positive">Reassured</span></td>
+  </tr>
+  <tr>
+    <td><strong>4. Set Reminder</strong><br>Time picker</td>
+    <td>App — Med Setup</td>
+    <td>He uses the large time-wheel picker to set 8am for his morning dose. He repeats for his evening medication at 8pm.</td>
+    <td>Small text input fields for time entry are error-prone for him. A visual picker removes friction.</td>
+    <td><span class="emotion-tag emo-positive">Confident</span></td>
+  </tr>
+  <tr>
+    <td><strong>5. Confirmation</strong><br>Summary screen</td>
+    <td>App — Med Setup</td>
+    <td>A summary screen shows both medications with their times. Icons accompany each label (sun for morning, moon for evening).</td>
+    <td>Text-only summaries require reading and verifying. Icons allow quick visual confirmation.</td>
+    <td><span class="emotion-tag emo-positive">Satisfied</span></td>
+  </tr>
+  <tr>
+    <td><strong>6. Appointment</strong><br>Check</td>
+    <td>App — Appointments</td>
+    <td>He taps "My Appointments". His upcoming GP visit on Friday is listed. He confirms the reminder is switched on.</td>
+    <td>He has missed appointments before because he could not read the date on the letter clearly.</td>
+    <td><span class="emotion-tag emo-positive">Organised</span></td>
+  </tr>
+  <tr>
+    <td><strong>7. GP Message</strong><br>Messaging</td>
+    <td>App — Messaging</td>
+    <td>Prompted by seeing the appointment, he sends a short message to his GP asking what he should bring to the visit.</td>
+    <td>Phoning the surgery is difficult with his hearing impairment. Text-based contact is his only low-barrier option.</td>
+    <td><span class="emotion-tag emo-positive">Independent</span></td>
+  </tr>
+</table>
+
+<h4>Emotional arc</h4>
+
+<div class="arc-container">
+  <h4>Emotional Arc — Derek</h4>
+  <div class="arc-chart" style="position: relative;">
+    <div class="arc-y-labels">
+      <span>High</span>
+      <span>Mid</span>
+      <span>Low</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 40%; background: #666;"></div>
+      <span class="arc-bar-label">First open</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 50%; background: #e65100;"></div>
+      <span class="arc-bar-label">Add med</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Audio help</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Reminder</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Confirm</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Appointment</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">GP message</span>
+    </div>
+  </div>
+</div>
+
+<div class="insight-box insight-teal">
+  <strong>Key design insight</strong>
+  Derek's journey is uniquely positive in trajectory but this is entirely conditional on the accessibility layer working correctly throughout. The audio support at Stage 3 is the pivotal moment: if that feature did not exist, the setup journey would stall. For Derek, every screen must offer a non-text route through it. This is not an enhancement; it is what makes the app usable for him at all.
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- JOURNEY 3 — SANDRA                      -->
+<!-- ════════════════════════════════════════ -->
+<h3>4.3 Journey 3 — Sandra Okafor</h3>
+
+<div class="journey-banner banner-amber">
+  <h4>Sandra Okafor — 46, Manchester — Caretaker for Marcus (19, Severe ASD &amp; Epilepsy)</h4>
+  <p>Scenario: Managing Marcus's medication schedule and coordinating with his neurologist ahead of an appointment</p>
+</div>
+
+<h4>Scenario &amp; expectations</h4>
+<p>It is a weekday morning. Sandra administers Marcus's first dose of the day and needs to log it in the app so she has an accurate record for his neurologist. She also received a notification that his next neurology appointment is in four days, and she wants to send the neurologist a message flagging that Marcus has had more disturbed nights this week. She expects HealthApp to let her do all of this quickly, on her phone, with minimal typing, while keeping an eye on Marcus.</p>
+
+<h4>Touchpoint map</h4>
+
+<table class="journey-table">
+  <tr>
+    <th class="th-amber">Stage</th>
+    <th class="th-amber">Channel</th>
+    <th class="th-amber">User Action</th>
+    <th class="th-amber">Pain Points</th>
+    <th class="th-amber">Emotion</th>
+  </tr>
+  <tr>
+    <td><strong>1. Morning Dose</strong><br>Reminder</td>
+    <td>Smartphone</td>
+    <td>Sandra receives a medication reminder for Marcus's 8am anti-epileptic dose. She administers it and opens HealthApp.</td>
+    <td>She currently uses a paper chart, which gets misplaced. A reliable digital reminder is the first step to consistency.</td>
+    <td><span class="emotion-tag emo-neutral">Routine</span></td>
+  </tr>
+  <tr>
+    <td><strong>2. Log the Dose</strong><br>Med tracker</td>
+    <td>App — Med Tracker</td>
+    <td>She taps Marcus's medication tile and presses "Mark as Given". The dose is logged with a timestamp.</td>
+    <td>On rushing days, the logging step must be fast: one tap from the home screen, no additional screens.</td>
+    <td><span class="emotion-tag emo-positive">Efficient</span></td>
+  </tr>
+  <tr>
+    <td><strong>3. History</strong><br>Weekly view</td>
+    <td>App — Med Tracker</td>
+    <td>She briefly reviews the weekly tracker to confirm all doses were given correctly over the past seven days.</td>
+    <td>She has no reliable way to confirm whether she gave a dose on a specific past day without a paper chart.</td>
+    <td><span class="emotion-tag emo-positive">Reassured</span></td>
+  </tr>
+  <tr>
+    <td><strong>4. Appointment</strong><br>Alert</td>
+    <td>App — Appointments</td>
+    <td>She notices the appointment reminder tile: "Neurology — Thursday, 4 days away". She taps it for details.</td>
+    <td>Appointment letters often arrive with little notice. An in-app reminder well ahead of the date gives her time to prepare.</td>
+    <td><span class="emotion-tag emo-neutral">Alert</span></td>
+  </tr>
+  <tr>
+    <td><strong>5. Appointment</strong><br>Details</td>
+    <td>App — Appointments</td>
+    <td>The screen shows date, time, location, and consultant name. She confirms the reminder is active.</td>
+    <td>Having all appointment information in one place reduces the risk of misreading a letter or losing the date.</td>
+    <td><span class="emotion-tag emo-positive">Organised</span></td>
+  </tr>
+  <tr>
+    <td><strong>6. Messaging</strong><br>Neurologist</td>
+    <td>App — Messaging</td>
+    <td>She sends a message to Marcus's neurologist flagging his disturbed sleep this week and asking if it is relevant to review.</td>
+    <td>Previously she would write this on a slip of paper to hand over at the appointment, where it was often overlooked.</td>
+    <td><span class="emotion-tag emo-positive">Proactive</span></td>
+  </tr>
+  <tr>
+    <td><strong>7. Resolution</strong><br>End of session</td>
+    <td>App — Home</td>
+    <td>She returns to the home screen. Today's dose is logged, the appointment is confirmed, and her message is sent.</td>
+    <td>No friction remains. The session took under three minutes while she remained present with Marcus.</td>
+    <td><span class="emotion-tag emo-positive">In control</span></td>
+  </tr>
+</table>
+
+<h4>Emotional arc</h4>
+
+<div class="arc-container">
+  <h4>Emotional Arc — Sandra</h4>
+  <div class="arc-chart" style="position: relative;">
+    <div class="arc-y-labels">
+      <span>High</span>
+      <span>Mid</span>
+      <span>Low</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 50%; background: #666;"></div>
+      <span class="arc-bar-label">Reminder</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Log dose</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">History</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 50%; background: #666;"></div>
+      <span class="arc-bar-label">Appt alert</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Appt details</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Message</span>
+    </div>
+    <div class="arc-bar-group">
+      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
+      <span class="arc-bar-label">Done</span>
+    </div>
+  </div>
+</div>
+
+<div class="insight-box insight-amber">
+  <strong>Key design insight</strong>
+  Sandra's journey is characterised by speed and reliability above all else. The small dip at Stage 4 reflects the anxiety that any appointment reminder creates for a caretaker managing complex care. The app must present appointment information clearly and early. The single-tap dose logging at Stage 2 is the most important interaction for her daily routine: if it requires more effort, she will revert to the paper chart. The messaging feature at Stage 6 closes a genuine gap. It converts informal, easily-lost notes into a timestamped clinical communication.
+</div>
 
   <h2 class="section-heading" id="sketches">5. Sketches &amp; Storyboard</h2>
   <p><em>Coming next.</em></p>
