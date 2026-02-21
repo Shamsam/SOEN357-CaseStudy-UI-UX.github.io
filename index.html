@@ -150,6 +150,139 @@
 
     a { color: #1a5276; }
 
+    /* ── Persona card styles ─────── */
+    .persona-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .persona-header {
+      padding: 1rem 1.2rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .persona-header-navy { background: #1a3c5e; }
+    .persona-header-teal { background: #1a7a6e; }
+    .persona-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .persona-header-info h4 {
+      color: #fff;
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.15rem;
+    }
+    .persona-header-info p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82rem;
+      margin: 0;
+    }
+    .persona-quote {
+      padding: 0.8rem 1.2rem;
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: #555;
+    }
+    .persona-body {
+      padding: 1rem 1.2rem;
+    }
+    .persona-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 1.5rem;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .persona-meta dt {
+      color: #999;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .persona-meta dd {
+      margin: 0 0 0.4rem;
+      color: #333;
+    }
+    .persona-conditions {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .persona-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      background: #eee;
+      color: #444;
+    }
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .persona-grid-item h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #999;
+      margin: 0 0 0.4rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #eee;
+    }
+    .persona-grid-item ul {
+      padding-left: 1.1rem;
+      margin: 0;
+    }
+    .persona-grid-item li {
+      font-size: 0.84rem;
+      margin-bottom: 0.25rem;
+      color: #444;
+    }
+    .persona-usage {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+    .persona-usage h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #999;
+      margin: 0 0 0.4rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #eee;
+    }
+    .persona-usage ul {
+      padding-left: 1.1rem;
+      margin: 0;
+    }
+    .persona-usage li {
+      font-size: 0.84rem;
+      margin-bottom: 0.25rem;
+      color: #444;
+    }
+
     /* ── Journey map styles ──────── */
     .journey-banner {
       padding: 1rem 1.2rem;
@@ -443,114 +576,160 @@
 
   <hr>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- 3. USER PERSONAS                        -->
-  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="personas">3. User Personas</h2>
 
-  <p>Based on our research, we developed two personas representing distinct user groups: a young adult managing multiple conditions independently, and an older adult with accessibility needs.</p>
+  <p>Based on our research, we developed two personas representing distinct user groups.</p>
 
   <!-- PERSONA 1 - PRIYA -->
   <h3>3.1 Priya Sharma</h3>
-
-  <table>
-    <tr><th>Attribute</th><th>Detail</th></tr>
-    <tr><td>Age</td><td>27</td></tr>
-    <tr><td>Location</td><td>Edinburgh, Scotland</td></tr>
-    <tr><td>Occupation</td><td>Part-time QA Tester (remote)</td></tr>
-    <tr><td>Income</td><td>£22,000/yr</td></tr>
-    <tr><td>Family</td><td>Lives alone; close contact with parents</td></tr>
-    <tr><td>Conditions</td><td>ADHD, ASD, Migraines</td></tr>
-  </table>
-
-  <blockquote>"I know I have to take my medication. I just forget. And then I feel guilty about forgetting, which makes everything worse."</blockquote>
-
-  <h4>Background</h4>
-  <p>Priya was diagnosed with ADHD at 16 and ASD at 22. She works part-time from home and manages three medications on different schedules. She is digitally confident but finds most health apps visually overwhelming.</p>
-
-  <h4>Goals</h4>
-  <ul>
-    <li>Never miss a medication dose</li>
-    <li>Communicate with her GP without phone calls</li>
-    <li>Keep her daily health routine as simple as possible</li>
-  </ul>
-
-  <h4>Pain points</h4>
-  <ul>
-    <li>Alarms become background noise, and doses are still missed</li>
-    <li>Health apps feel cluttered and hard to navigate</li>
-    <li>Avoids contacting her GP because she dislikes phone calls</li>
-    <li>Migraines leave her unable to interact with screens</li>
-  </ul>
-
-  <h4>Behaviour</h4>
-  <ul>
-    <li><strong>Frequency:</strong> Checks phone constantly; often dismisses notifications</li>
-    <li><strong>Skills:</strong> High digital literacy</li>
-    <li><strong>Attitude:</strong> Abandons apps that require too much setup</li>
-    <li><strong>Environment:</strong> Works from home; easily dysregulated by sensory load</li>
-  </ul>
-
-  <h4>How Priya would use HealthApp</h4>
-  <ul>
-    <li>Full-screen reminders with a single large "Taken" button</li>
-    <li>Muted colour tones and non-flashing UI</li>
-    <li>A daily medication tracker she can check at a glance</li>
-    <li>In-app messaging to her GP surgery</li>
-  </ul>
-
-  <hr>
-
+  
+  <div class="persona-card">
+    <div class="persona-header persona-header-navy">
+      <img class="persona-avatar" src="priya.jpg" alt="Photo of Priya Sharma">
+      <div class="persona-header-info">
+        <h4>Priya Sharma</h4>
+        <p>Young adult managing multiple conditions independently</p>
+      </div>
+    </div>
+    <div class="persona-quote">"I know I have to take my medication. I just forget. And then I feel guilty about forgetting, which makes everything worse."</div>
+    <div class="persona-body">
+      <dl class="persona-meta">
+        <dt>Age</dt>        <dd>27</dd>
+        <dt>Location</dt>   <dd>Edinburgh, Scotland</dd>
+        <dt>Occupation</dt>  <dd>Part-time QA Tester (remote)</dd>
+        <dt>Income</dt>      <dd>£22,000/yr</dd>
+        <dt>Family</dt>      <dd>Lives alone; close contact with parents</dd>
+        <dt>Digital skills</dt> <dd>High literacy; comfortable with apps</dd>
+      </dl>
+      <div class="persona-conditions">
+        <span class="persona-tag">ADHD</span>
+        <span class="persona-tag">ASD</span>
+        <span class="persona-tag">Migraines</span>
+      </div>
+      <p style="font-size: 0.88rem; color: #444;">Diagnosed with ADHD at 16 and ASD at 22. Works part-time from home and manages three medications on different schedules. Digitally confident but finds most health apps visually overwhelming.</p>
+      <div class="persona-grid">
+        <div class="persona-grid-item">
+          <h4>Goals</h4>
+          <ul>
+            <li>Never miss a medication dose</li>
+            <li>Communicate with her GP without phone calls</li>
+            <li>Keep her daily routine as simple as possible</li>
+          </ul>
+        </div>
+        <div class="persona-grid-item">
+          <h4>Pain Points</h4>
+          <ul>
+            <li>Alarms become background noise, doses still missed</li>
+            <li>Health apps feel cluttered and hard to navigate</li>
+            <li>Avoids GP contact due to phone call anxiety</li>
+            <li>Migraines make screen use impossible</li>
+          </ul>
+        </div>
+        <div class="persona-grid-item">
+          <h4>Behaviour</h4>
+          <ul>
+            <li>Checks phone constantly; dismisses notifications</li>
+            <li>Abandons apps that require too much setup</li>
+            <li>Easily dysregulated by sensory load</li>
+          </ul>
+        </div>
+        <div class="persona-grid-item">
+          <h4>Motivations</h4>
+          <ul>
+            <li>Feeling in control of her own health</li>
+            <li>Reducing guilt around missed doses</li>
+            <li>Avoiding sensory stress from complex systems</li>
+          </ul>
+        </div>
+      </div>
+      <div class="persona-usage">
+        <h4>How Priya would use HealthApp</h4>
+        <ul>
+          <li>Full-screen reminders with a single large "Taken" button</li>
+          <li>Muted colour tones and non-flashing UI</li>
+          <li>A daily medication tracker she can check at a glance</li>
+          <li>In-app messaging to her GP surgery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
   <!-- PERSONA 2 - DEREK -->
   <h3>3.2 Derek Walsh</h3>
-
-  <table>
-    <tr><th>Attribute</th><th>Detail</th></tr>
-    <tr><td>Age</td><td>67</td></tr>
-    <tr><td>Location</td><td>Brecon, Wales (rural)</td></tr>
-    <tr><td>Occupation</td><td>Retired builder</td></tr>
-    <tr><td>Income</td><td>State pension + small savings</td></tr>
-    <tr><td>Family</td><td>Married; two adult children nearby</td></tr>
-    <tr><td>Conditions</td><td>Dyslexia, Hearing impairment, Type 2 Diabetes, Hypertension</td></tr>
-  </table>
-
-  <blockquote>"The pharmacist prints everything in tiny writing. My wife reads it for me. I'd rather do it myself."</blockquote>
-
-  <h4>Background</h4>
-  <p>Derek has struggled with reading his whole life and has moderate hearing loss. He manages Type 2 diabetes and hypertension with daily medication. He is comfortable with WhatsApp and calls but rarely uses other apps. He lives rurally, making GP visits require significant planning.</p>
-
-  <h4>Goals</h4>
-  <ul>
-    <li>Take medications reliably each morning and evening</li>
-    <li>Understand health information without asking his wife</li>
-    <li>Never miss a GP appointment due to a lost letter</li>
-  </ul>
-
-  <h4>Pain points</h4>
-  <ul>
-    <li>Medication leaflets and appointment letters are hard to read</li>
-    <li>Phone calls to his GP are difficult with hearing loss</li>
-    <li>Forgets which medications he has taken on a given day</li>
-    <li>Feels embarrassed asking for help with reading</li>
-  </ul>
-
-  <h4>Behaviour</h4>
-  <ul>
-    <li><strong>Frequency:</strong> Medications twice daily; GP every 1–2 months</li>
-    <li><strong>Skills:</strong> Moderate digital literacy</li>
-    <li><strong>Attitude:</strong> Cautious but motivated if the benefit is clear</li>
-    <li><strong>Environment:</strong> Rural home; wife often present as informal support</li>
-  </ul>
-
-  <h4>How Derek would use HealthApp</h4>
-  <ul>
-    <li>Audio read-aloud for medication info and appointment details</li>
-    <li>Large-text, high-contrast interface with adjustable text size</li>
-    <li>Icons alongside all text labels</li>
-    <li>Daily tracker with clear morning/evening split</li>
-    <li>Text-based messaging with his GP instead of phone calls</li>
-  </ul>
-
+  
+  <div class="persona-card">
+    <div class="persona-header persona-header-teal">
+      <img class="persona-avatar" src="derek.jpg" alt="Photo of Derek Walsh">
+      <div class="persona-header-info">
+        <h4>Derek Walsh</h4>
+        <p>Older adult with multiple accessibility needs</p>
+      </div>
+    </div>
+    <div class="persona-quote">"The pharmacist prints everything in tiny writing. My wife reads it for me. I'd rather do it myself."</div>
+    <div class="persona-body">
+      <dl class="persona-meta">
+        <dt>Age</dt>        <dd>67</dd>
+        <dt>Location</dt>   <dd>Brecon, Wales (rural)</dd>
+        <dt>Occupation</dt>  <dd>Retired builder</dd>
+        <dt>Income</dt>      <dd>State pension + small savings</dd>
+        <dt>Family</dt>      <dd>Married; two adult children nearby</dd>
+        <dt>Digital skills</dt> <dd>Moderate; comfortable with WhatsApp and calls</dd>
+      </dl>
+      <div class="persona-conditions">
+        <span class="persona-tag">Dyslexia</span>
+        <span class="persona-tag">Hearing impairment</span>
+        <span class="persona-tag">Type 2 Diabetes</span>
+        <span class="persona-tag">Hypertension</span>
+      </div>
+      <p style="font-size: 0.88rem; color: #444;">Has struggled with reading his whole life and has moderate hearing loss. Manages Type 2 diabetes and hypertension with daily medication. Comfortable with WhatsApp but rarely uses other apps. Lives rurally, making GP visits require significant planning.</p>
+      <div class="persona-grid">
+        <div class="persona-grid-item">
+          <h4>Goals</h4>
+          <ul>
+            <li>Take medications reliably morning and evening</li>
+            <li>Understand health info without asking his wife</li>
+            <li>Never miss a GP appointment due to a lost letter</li>
+          </ul>
+        </div>
+        <div class="persona-grid-item">
+          <h4>Pain Points</h4>
+          <ul>
+            <li>Medication leaflets and letters are hard to read</li>
+            <li>Phone calls difficult with hearing loss</li>
+            <li>Forgets which medications he has taken</li>
+            <li>Embarrassed asking for help with reading</li>
+          </ul>
+        </div>
+        <div class="persona-grid-item">
+          <h4>Behaviour</h4>
+          <ul>
+            <li>Medications twice daily; GP every 1-2 months</li>
+            <li>Cautious but motivated if benefit is clear</li>
+            <li>Wife often present as informal support</li>
+          </ul>
+        </div>
+        <div class="persona-grid-item">
+          <h4>Motivations</h4>
+          <ul>
+            <li>Maintaining independence as he gets older</li>
+            <li>Not being a burden on his wife or children</li>
+            <li>Feeling confident at appointments</li>
+          </ul>
+        </div>
+      </div>
+      <div class="persona-usage">
+        <h4>How Derek would use HealthApp</h4>
+        <ul>
+          <li>Audio read-aloud for medication info and appointments</li>
+          <li>Large-text, high-contrast interface with adjustable size</li>
+          <li>Icons alongside all text labels</li>
+          <li>Daily tracker with morning/evening split</li>
+          <li>Text-based messaging with his GP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
   <hr>
 
   <!-- ═══════════════════════════════════════ -->
