@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthApp — UX/UI Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .title-block {
+      border-bottom: 2px solid #222;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .title-block h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .title-block .subtitle {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+    .title-block .meta {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .toc {
+      margin-bottom: 2.5rem;
+      padding: 1.2rem 1.5rem;
+      background: #f8f8f8;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+    .toc h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .toc ol {
+      padding-left: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .toc ol li {
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .toc ol li a {
+      color: #1a5276;
+      text-decoration: none;
+    }
+    .toc ol li a:hover { text-decoration: underline; }
+
+    h2.section-heading {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.3rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-top: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p { margin-bottom: 0.9rem; }
+    strong { font-weight: 600; }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    li { margin-bottom: 0.3rem; }
+
+    blockquote {
+      border-left: 3px solid #999;
+      padding: 0.5rem 0 0.5rem 1rem;
+      margin: 1rem 0 1.2rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid #ddd;
+      vertical-align: top;
+    }
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2rem 0;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ccc;
+      font-size: 0.8rem;
+      color: #999;
+      text-align: center;
+    }
+
+    a { color: #1a5276; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="title-block">
+    <h1>HealthApp</h1>
+    <div class="subtitle">UX/UI Design of a Health Companion Super App</div>
+    <div class="meta">SOEN 357 — Winter 2026 | Mini Project</div>
+  </div>
+
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#research">User Research</a></li>
+      <li><a href="#personas">User Personas</a></li>
+      <li><a href="#journeys">User Journey Maps</a></li>
+      <li><a href="#sketches">Sketches &amp; Storyboard</a></li>
+      <li><a href="#wireframes">Wireframes &amp; Prototype</a></li>
+      <li><a href="#testing">Usability Testing</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. INTRODUCTION -->
+  <h2 class="section-heading" id="introduction">1. Introduction</h2>
+
+  <h3>1.1 The Problem</h3>
+
+  <p>Managing a chronic health condition is not a continuous, daily effort that spans multiple responsibilities:</p>
+
+  <ul>
+    <li>Remembering and taking medications on different schedules throughout the day</li>
+    <li>Tracking what has been taken, missed, or skipped, and communicating that accurately to medical professionals</li>
+    <li>Managing appointments </li>
+    <li>Understanding health information that is often written in complex medical language</li>
+  </ul>
+
+  <p>For many users, this administrative load sits on top of the condition itself. Someone with <strong>ADHD</strong> may struggle with the routine and self-regulation that medication adherence requires. An older adult with <strong>dyslexia</strong> may be unable to read the information printed on a medication leaflet. A caretaker managing medications for a family member with <strong>severe ASD</strong> has no margin for error and no reliable system to fall back on.</p>
+
+  <p>Existing tools rarely account for this complexity. Generic reminder apps are not built around multi-medication schedules. Patient portals are text-heavy and difficult to navigate. Paper-based systems get lost and provide no safety net when a dose is missed. The result is a significant gap between what people need to manage their health and what available tools can provide.</p>
+
+  <h3>1.2 The Solution</h3>
+
+  <p><strong>HealthApp</strong> is a mobile health management application designed to close this gap. It focuses on five core capabilities:</p>
+
+  <table>
+    <tr><th>Feature</th><th>Description</th></tr>
+    <tr><td><strong>Medication management</strong></td><td>Add and manage medications, dosages, and schedules in one place</td></tr>
+    <tr><td><strong>Medication reminders</strong></td><td>Persistent notifications that remain visible until the dose is logged</td></tr>
+    <tr><td><strong>Usage tracking</strong></td><td>A clear log of every dose with timestamps</td></tr>
+    <tr><td><strong>Appointment management</strong></td><td>Store, view, and receive reminders for upcoming healthcare appointments</td></tr>
+    <tr><td><strong>Healthcare communication</strong></td><td>In-app messaging with medical professionals, replacing phone calls</td></tr>
+  </table>
+
+  <p>The app is built from the outset for users who face accessibility barriers. This means prioritising:</p>
+
+  <ul>
+    <li>Plain language and simple sentences throughout the interface</li>
+    <li>Audio alternatives to all text content</li>
+    <li>Adjustable contrast and text size</li>
+    <li>Descriptive buttons and consistent, simple layouts</li>
+    <li>Icons alongside text so users can navigate without relying on reading alone</li>
+  </ul>
+
+  <h3>1.3 Target Users</h3>
+
+  <p>HealthApp serves three broad user groups:</p>
+
+  <ol>
+    <li><strong>Individuals managing their own chronic conditions</strong> — people with ADHD, ASD, migraines, dyslexia, hearing impairment, or visual impairment who need an app that works with their access needs rather than against them.</li>
+    <li><strong>Older adults</strong> — users who are less digitally confident but highly motivated to manage their health independently, and who may face barriers including hearing loss, reading difficulty, or unfamiliarity with app conventions.</li>
+    <li><strong>Caretakers</strong> — family members or carers who manage medications and appointments on behalf of someone who cannot do so themselves.</li>
+  </ol>
+
+  <hr>
+
+  <!-- Placeholder sections -->
+  <h2 class="section-heading" id="research">2. User Research</h2>
+  <p><em>Coming next.</em></p>
+  <hr>
+
+  <h2 class="section-heading" id="personas">3. User Personas</h2>
+  <p><em>Coming next.</em></p>
+  <hr>
+
+  <h2 class="section-heading" id="journeys">4. User Journey Maps</h2>
+  <p><em>Coming next.</em></p>
+  <hr>
+
+  <h2 class="section-heading" id="sketches">5. Sketches &amp; Storyboard</h2>
+  <p><em>Coming next.</em></p>
+  <hr>
+
+  <h2 class="section-heading" id="wireframes">6. Wireframes &amp; Prototype</h2>
+  <p><em>Coming next.</em></p>
+  <hr>
+
+  <h2 class="section-heading" id="testing">7. Usability Testing</h2>
+  <p><em>Coming next.</em></p>
+  <hr>
+
+  <h2 class="section-heading" id="reflection">8. Reflection</h2>
+  <p><em>Coming next.</em></p>
+
+  <footer>
+    <p>HealthApp — SOEN 357 UX/UI Case Study — Winter 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
