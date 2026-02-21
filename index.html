@@ -9,415 +9,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Source Sans 3', sans-serif;
-      background: #fff;
-      color: #222;
-      line-height: 1.75;
-      font-size: 15px;
-    }
-
-    .container {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-
-    .title-block {
-      border-bottom: 2px solid #222;
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .title-block h1 {
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-    .title-block .subtitle {
-      font-size: 1.05rem;
-      color: #555;
-      margin-bottom: 0.8rem;
-    }
-    .title-block .meta {
-      font-size: 0.85rem;
-      color: #777;
-    }
-
-    .toc {
-      margin-bottom: 2.5rem;
-      padding: 1.2rem 1.5rem;
-      background: #f8f8f8;
-      border: 1px solid #e5e5e5;
-      border-radius: 4px;
-    }
-    .toc h2 {
-      font-family: 'Source Serif 4', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-    }
-    .toc ol {
-      padding-left: 1.3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .toc ol li {
-      font-size: 0.9rem;
-      color: #444;
-    }
-    .toc ol li a {
-      color: #1a5276;
-      text-decoration: none;
-    }
+    body { font-family: 'Source Sans 3', sans-serif; background: #fff; color: #222; line-height: 1.75; font-size: 15px; }
+    .container { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .title-block { border-bottom: 2px solid #222; padding-bottom: 1.5rem; margin-bottom: 2rem; }
+    .title-block h1 { font-family: 'Source Serif 4', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .title-block .subtitle { font-size: 1.05rem; color: #555; margin-bottom: 0.8rem; }
+    .title-block .meta { font-size: 0.85rem; color: #777; }
+    .toc { margin-bottom: 2.5rem; padding: 1.2rem 1.5rem; background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 4px; }
+    .toc h2 { font-family: 'Source Serif 4', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .toc ol { padding-left: 1.3rem; display: flex; flex-direction: column; gap: 0.25rem; }
+    .toc ol li { font-size: 0.9rem; color: #444; }
+    .toc ol li a { color: #1a5276; text-decoration: none; }
     .toc ol li a:hover { text-decoration: underline; }
-
-    h2.section-heading {
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-top: 2.5rem;
-      margin-bottom: 0.3rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid #ccc;
-    }
-
-    h3 {
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-top: 1.3rem;
-      margin-bottom: 0.4rem;
-    }
-
+    h2.section-heading { font-family: 'Source Serif 4', serif; font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.3rem; padding-bottom: 0.3rem; border-bottom: 1px solid #ccc; }
+    h3 { font-family: 'Source Serif 4', serif; font-size: 1.1rem; font-weight: 600; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+    h4 { font-size: 0.95rem; font-weight: 600; margin-top: 1.3rem; margin-bottom: 0.4rem; }
     p { margin-bottom: 0.9rem; }
     strong { font-weight: 600; }
-
-    ul, ol {
-      padding-left: 1.4rem;
-      margin-bottom: 1rem;
-    }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.3rem; }
-
-    blockquote {
-      border-left: 3px solid #999;
-      padding: 0.5rem 0 0.5rem 1rem;
-      margin: 1rem 0 1.2rem;
-      color: #555;
-      font-style: italic;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0 1.5rem;
-      font-size: 0.9rem;
-    }
-    th, td {
-      text-align: left;
-      padding: 0.5rem 0.7rem;
-      border: 1px solid #ddd;
-      vertical-align: top;
-    }
-    th {
-      background: #f5f5f5;
-      font-weight: 600;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 2rem 0;
-    }
-
-    footer {
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid #ccc;
-      font-size: 0.8rem;
-      color: #999;
-      text-align: center;
-    }
-
+    blockquote { border-left: 3px solid #999; padding: 0.5rem 0 0.5rem 1rem; margin: 1rem 0 1.2rem; color: #555; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.5rem 0.7rem; border: 1px solid #ddd; vertical-align: top; }
+    th { background: #f5f5f5; font-weight: 600; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ccc; font-size: 0.8rem; color: #999; text-align: center; }
     a { color: #1a5276; }
-
-    /* ── Persona card styles ─────── */
-    .persona-card {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      overflow: hidden;
-      margin: 1.5rem 0;
-    }
-    .persona-header {
-      padding: 1rem 1.2rem;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    .persona-card { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; margin: 1.5rem 0; }
+    .persona-header { padding: 1rem 1.2rem; color: #fff; display: flex; align-items: center; gap: 1rem; }
     .persona-header-navy { background: #1a3c5e; }
     .persona-header-teal { background: #1a7a6e; }
-    .persona-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      flex-shrink: 0;
-      object-fit: cover;
-    }
-    .persona-header-info h4 {
-      color: #fff;
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 0 0 0.15rem;
-    }
-    .persona-header-info p {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.82rem;
-      margin: 0;
-    }
-    .persona-quote {
-      padding: 0.8rem 1.2rem;
-      background: #f8f8f8;
-      border-bottom: 1px solid #ddd;
-      font-style: italic;
-      font-size: 0.88rem;
-      color: #555;
-    }
-    .persona-body {
-      padding: 1rem 1.2rem;
-    }
-    .persona-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.3rem 1.5rem;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .persona-meta dt {
-      color: #999;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .persona-meta dd {
-      margin: 0 0 0.4rem;
-      color: #333;
-    }
-    .persona-conditions {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .persona-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
-      border-radius: 3px;
-      background: #eee;
-      color: #444;
-    }
-    .persona-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .persona-grid-item h4 {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #999;
-      margin: 0 0 0.4rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid #eee;
-    }
-    .persona-grid-item ul {
-      padding-left: 1.1rem;
-      margin: 0;
-    }
-    .persona-grid-item li {
-      font-size: 0.84rem;
-      margin-bottom: 0.25rem;
-      color: #444;
-    }
-    .persona-usage {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid #eee;
-    }
-    .persona-usage h4 {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #999;
-      margin: 0 0 0.4rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid #eee;
-    }
-    .persona-usage ul {
-      padding-left: 1.1rem;
-      margin: 0;
-    }
-    .persona-usage li {
-      font-size: 0.84rem;
-      margin-bottom: 0.25rem;
-      color: #444;
-    }
-
-    /* ── Journey map styles ──────── */
-    .journey-banner {
-      padding: 1rem 1.2rem;
-      color: #fff;
-      margin: 1.5rem 0 0.8rem;
-      border-radius: 4px;
-    }
-    .journey-banner h4 {
-      color: #fff;
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin: 0 0 0.2rem;
-    }
-    .journey-banner p {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.85rem;
-      margin: 0;
-      font-style: italic;
-    }
+    .persona-avatar { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.2); flex-shrink: 0; object-fit: cover; }
+    .persona-header-info h4 { color: #fff; font-family: 'Source Serif 4', serif; font-size: 1.1rem; font-weight: 700; margin: 0 0 0.15rem; }
+    .persona-header-info p { color: rgba(255,255,255,0.75); font-size: 0.82rem; margin: 0; }
+    .persona-quote { padding: 0.8rem 1.2rem; background: #f8f8f8; border-bottom: 1px solid #ddd; font-style: italic; font-size: 0.88rem; color: #555; }
+    .persona-body { padding: 1rem 1.2rem; }
+    .persona-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1.5rem; font-size: 0.85rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+    .persona-meta dt { color: #999; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .persona-meta dd { margin: 0 0 0.4rem; color: #333; }
+    .persona-conditions { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+    .persona-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 3px; background: #eee; color: #444; }
+    .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .persona-grid-item h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #999; margin: 0 0 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid #eee; }
+    .persona-grid-item ul { padding-left: 1.1rem; margin: 0; }
+    .persona-grid-item li { font-size: 0.84rem; margin-bottom: 0.25rem; color: #444; }
+    .persona-usage { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .persona-usage h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #999; margin: 0 0 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid #eee; }
+    .persona-usage ul { padding-left: 1.1rem; margin: 0; }
+    .persona-usage li { font-size: 0.84rem; margin-bottom: 0.25rem; color: #444; }
+    .journey-banner { padding: 1rem 1.2rem; color: #fff; margin: 1.5rem 0 0.8rem; border-radius: 4px; }
+    .journey-banner h4 { color: #fff; font-family: 'Source Serif 4', serif; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.2rem; }
+    .journey-banner p { color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0; font-style: italic; }
     .banner-navy { background: #1a3c5e; }
     .banner-teal { background: #1a7a6e; }
-
-    .journey-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      font-size: 0.82rem;
-    }
-    .journey-table th {
-      padding: 0.5rem 0.6rem;
-      text-align: left;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .journey-table td {
-      padding: 0.55rem 0.6rem;
-      border: 1px solid #ddd;
-      vertical-align: top;
-      line-height: 1.55;
-    }
-    .journey-table tr:nth-child(even) td {
-      background: #fafafa;
-    }
+    .journey-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.82rem; }
+    .journey-table th { padding: 0.5rem 0.6rem; text-align: left; color: #fff; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .journey-table td { padding: 0.55rem 0.6rem; border: 1px solid #ddd; vertical-align: top; line-height: 1.55; }
+    .journey-table tr:nth-child(even) td { background: #fafafa; }
     .th-navy { background: #1a3c5e; }
     .th-teal { background: #1a7a6e; }
-
-    .emotion-tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.15rem 0.45rem;
-      border-radius: 3px;
-      color: #fff;
-      white-space: nowrap;
-    }
+    .emotion-tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 3px; color: #fff; white-space: nowrap; }
     .emo-negative { background: #b71c1c; }
     .emo-mixed { background: #e65100; }
     .emo-neutral { background: #666; }
     .emo-positive { background: #2e7d32; }
-
-    .arc-container {
-      background: #f8f8f8;
-      border: 1px solid #e5e5e5;
-      border-radius: 4px;
-      padding: 1rem 1.2rem 0.8rem;
-      margin: 1rem 0 1.2rem;
-    }
-    .arc-container h4 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin: 0 0 0.8rem;
-      color: #444;
-    }
-    .arc-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 0;
-      height: 120px;
-      padding-bottom: 1.6rem;
-      position: relative;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      margin-left: 2rem;
-    }
-    .arc-y-labels {
-      position: absolute;
-      left: -2rem;
-      top: 0;
-      bottom: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-size: 0.65rem;
-      color: #999;
-    }
-    .arc-bar-group {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      height: 100%;
-      position: relative;
-    }
-    .arc-bar {
-      width: 22px;
-      border-radius: 3px 3px 0 0;
-      min-height: 4px;
-    }
-    .arc-bar-label {
-      position: absolute;
-      bottom: -1.5rem;
-      font-size: 0.6rem;
-      color: #777;
-      white-space: nowrap;
-      transform: rotate(-30deg);
-      transform-origin: top left;
-      left: 50%;
-    }
-
-    .insight-box {
-      border-left: 3px solid #999;
-      background: #f8f8f8;
-      padding: 0.8rem 1rem;
-      margin: 1rem 0 1.5rem;
-      font-size: 0.88rem;
-    }
-    .insight-box strong {
-      display: block;
-      margin-bottom: 0.3rem;
-    }
+    .arc-container { background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 4px; padding: 1rem 1.2rem 0.8rem; margin: 1rem 0 1.2rem; }
+    .arc-container h4 { font-size: 0.85rem; font-weight: 600; margin: 0 0 0.8rem; color: #444; }
+    .arc-chart { display: flex; align-items: flex-end; gap: 0; height: 120px; padding-bottom: 1.6rem; position: relative; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; margin-left: 2rem; }
+    .arc-y-labels { position: absolute; left: -2rem; top: 0; bottom: 1.6rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.65rem; color: #999; }
+    .arc-bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; position: relative; }
+    .arc-bar { width: 22px; border-radius: 3px 3px 0 0; min-height: 4px; }
+    .arc-bar-label { position: absolute; bottom: -1.5rem; font-size: 0.6rem; color: #777; white-space: nowrap; transform: rotate(-30deg); transform-origin: top left; left: 50%; }
+    .insight-box { border-left: 3px solid #999; background: #f8f8f8; padding: 0.8rem 1rem; margin: 1rem 0 1.5rem; font-size: 0.88rem; }
+    .insight-box strong { display: block; margin-bottom: 0.3rem; }
     .insight-navy { border-left-color: #1a3c5e; }
     .insight-teal { border-left-color: #1a7a6e; }
   </style>
@@ -445,28 +109,20 @@
     </ol>
   </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- 1. INTRODUCTION                         -->
-  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="introduction">1. Introduction</h2>
 
   <h3>1.1 The Problem</h3>
-
   <p>Managing a chronic health condition is a continuous, daily effort:</p>
-
   <ul>
     <li>Remembering and taking medications on different schedules</li>
     <li>Tracking what has been taken, missed, or skipped</li>
     <li>Managing appointments across multiple healthcare professionals</li>
     <li>Understanding health information often written in complex medical language</li>
   </ul>
-
   <p>Someone with <strong>ADHD</strong> may struggle with the self-regulation medication adherence requires. An older adult with <strong>dyslexia</strong> may be unable to read a medication leaflet. Existing tools (generic reminder apps, text-heavy patient portals, paper-based systems) rarely account for this complexity.</p>
 
   <h3>1.2 The Solution</h3>
-
   <p><strong>HealthApp</strong> is a mobile health management application designed to close this gap. It focuses on five core capabilities:</p>
-
   <table>
     <tr><th>Feature</th><th>Description</th></tr>
     <tr><td><strong>Medication management</strong></td><td>Add and manage medications, dosages, and schedules in one place</td></tr>
@@ -475,11 +131,9 @@
     <tr><td><strong>Appointment management</strong></td><td>Store, view, and receive reminders for upcoming appointments</td></tr>
     <tr><td><strong>Healthcare communication</strong></td><td>In-app messaging with medical professionals</td></tr>
   </table>
-
   <p>The app prioritises accessibility as a core design decision: plain language, audio alternatives, adjustable contrast and text size, descriptive buttons, icons alongside text, and consistent layouts throughout.</p>
 
   <h3>1.3 Target Users</h3>
-
   <ol>
     <li><strong>Individuals managing their own chronic conditions</strong>: people with ADHD, ASD, migraines, dyslexia, hearing impairment, or visual impairment</li>
     <li><strong>Older adults</strong>: less digitally confident but motivated to manage their health independently</li>
@@ -488,15 +142,10 @@
 
   <hr>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- 2. USER RESEARCH                        -->
-  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="research">2. User Research</h2>
-
   <p>We used two complementary research methods, surveys and semi-structured interviews, designed to be accessible and multi-channel for a population that faces barriers with standard digital tools.</p>
 
   <h3>2.1 Surveys</h3>
-
   <h4>Distribution channels</h4>
   <ul>
     <li><strong>TV and newspaper ads</strong>: to reach older adults</li>
@@ -504,7 +153,6 @@
     <li><strong>Phone-based surveys</strong>: for participants with visual or motor impairments</li>
     <li><strong>Caretakers</strong>: invited to respond on behalf of those they support</li>
   </ul>
-
   <h4>Question types</h4>
   <ul>
     <li><strong>Spectrum answers</strong> (Likert scales): frequency, satisfaction, difficulty</li>
@@ -513,19 +161,16 @@
   </ul>
 
   <h3>2.2 Interviews</h3>
-
-  <p>Semi-structured interviews (30–45 minutes) were offered via video call (with captions), phone, or in-person. Participants included people managing multiple chronic conditions and older adults with lower digital confidence. Topics covered daily routines, missed medications, GP communication challenges, current tools, and reactions to design concepts.</p>
+  <p>Semi-structured interviews (30-45 minutes) were offered via video call (with captions), phone, or in-person. Participants included people managing multiple chronic conditions and older adults with lower digital confidence. Topics covered daily routines, missed medications, GP communication challenges, current tools, and reactions to design concepts.</p>
 
   <h3>2.3 Survey Results (12 responses)</h3>
-
   <table>
     <tr><th>Category</th><th>Breakdown</th></tr>
     <tr><td>Responding as patient</td><td>8 (67%)</td></tr>
     <tr><td>Responding as caretaker</td><td>4 (33%)</td></tr>
-    <tr><td>Age range</td><td>22–74</td></tr>
+    <tr><td>Age range</td><td>22-74</td></tr>
     <tr><td>Conditions</td><td>ADHD, ASD, Type 2 Diabetes, Epilepsy, Migraines, Dyslexia, Hearing impairment, Hypertension</td></tr>
   </table>
-
   <h4>Key findings</h4>
   <ul>
     <li>10 of 12 (83%) take medication daily; 7 manage two or more on different schedules</li>
@@ -534,7 +179,6 @@
     <li>6 of 12 (50%) had missed or nearly missed an appointment in the past six months</li>
     <li>9 of 12 (75%) would prefer <strong>text-based messaging</strong> with their GP over phone calls</li>
   </ul>
-
   <h4>Pain points (quoted from respondents)</h4>
   <ul>
     <li>"Alarms are easy to dismiss and I forget what they were for"</li>
@@ -542,9 +186,7 @@
     <li>"I have no way to confirm later whether I actually took my morning dose"</li>
     <li>"Calling the GP is difficult with my hearing"</li>
   </ul>
-
   <h4>Accessibility needs (multiple selections)</h4>
-
   <table>
     <tr><th>Need</th><th>Respondents</th></tr>
     <tr><td>Simple, uncluttered layout</td><td>9</td></tr>
@@ -556,17 +198,12 @@
   </table>
 
   <h3>2.4 Interview Highlights</h3>
-
   <blockquote>"I set three alarms for my tablets and I still miss them. By the third alarm I've convinced myself I already took them." - Participant A, 29, ADHD &amp; migraines</blockquote>
-
   <blockquote>"I'd love to message my GP instead of phoning. By the time I get through the phone menu I've forgotten what I wanted to say." - Participant C, 71, dyslexia &amp; hearing impairment</blockquote>
-
   <blockquote>"Every health app I've tried looks like it was designed for a 25-year-old with perfect vision. I just want big buttons and plain English." - Participant D, 66, Type 2 diabetes &amp; hypertension</blockquote>
-
   <p>Common themes: alarm fatigue, fragmented records across multiple systems, accessibility as a prerequisite rather than an optional mode, and phone call avoidance.</p>
 
   <h3>2.5 Synthesis</h3>
-
   <p>The research confirmed three core design priorities:</p>
   <ol>
     <li><strong>Reminders must be persistent</strong>: standard alarms are not effective</li>
@@ -577,12 +214,9 @@
   <hr>
 
   <h2 class="section-heading" id="personas">3. User Personas</h2>
-
   <p>Based on our research, we developed two personas representing distinct user groups.</p>
 
-  <!-- PERSONA 1 - PRIYA -->
   <h3>3.1 Priya Sharma</h3>
-  
   <div class="persona-card">
     <div class="persona-header persona-header-navy">
       <img class="persona-avatar" src="priya.jpg" alt="Photo of Priya Sharma">
@@ -594,12 +228,12 @@
     <div class="persona-quote">"I know I have to take my medication. I just forget. And then I feel guilty about forgetting, which makes everything worse."</div>
     <div class="persona-body">
       <dl class="persona-meta">
-        <dt>Age</dt>        <dd>27</dd>
-        <dt>Location</dt>   <dd>Edinburgh, Scotland</dd>
-        <dt>Occupation</dt>  <dd>Part-time QA Tester (remote)</dd>
-        <dt>Income</dt>      <dd>£22,000/yr</dd>
-        <dt>Family</dt>      <dd>Lives alone; close contact with parents</dd>
-        <dt>Digital skills</dt> <dd>High literacy; comfortable with apps</dd>
+        <dt>Age</dt><dd>27</dd>
+        <dt>Location</dt><dd>Edinburgh, Scotland</dd>
+        <dt>Occupation</dt><dd>Part-time QA Tester (remote)</dd>
+        <dt>Income</dt><dd>£22,000/yr</dd>
+        <dt>Family</dt><dd>Lives alone; close contact with parents</dd>
+        <dt>Digital skills</dt><dd>High literacy; comfortable with apps</dd>
       </dl>
       <div class="persona-conditions">
         <span class="persona-tag">ADHD</span>
@@ -608,55 +242,16 @@
       </div>
       <p style="font-size: 0.88rem; color: #444;">Diagnosed with ADHD at 16 and ASD at 22. Works part-time from home and manages three medications on different schedules. Digitally confident but finds most health apps visually overwhelming.</p>
       <div class="persona-grid">
-        <div class="persona-grid-item">
-          <h4>Goals</h4>
-          <ul>
-            <li>Never miss a medication dose</li>
-            <li>Communicate with her GP without phone calls</li>
-            <li>Keep her daily routine as simple as possible</li>
-          </ul>
-        </div>
-        <div class="persona-grid-item">
-          <h4>Pain Points</h4>
-          <ul>
-            <li>Alarms become background noise, doses still missed</li>
-            <li>Health apps feel cluttered and hard to navigate</li>
-            <li>Avoids GP contact due to phone call anxiety</li>
-            <li>Migraines make screen use impossible</li>
-          </ul>
-        </div>
-        <div class="persona-grid-item">
-          <h4>Behaviour</h4>
-          <ul>
-            <li>Checks phone constantly; dismisses notifications</li>
-            <li>Abandons apps that require too much setup</li>
-            <li>Easily dysregulated by sensory load</li>
-          </ul>
-        </div>
-        <div class="persona-grid-item">
-          <h4>Motivations</h4>
-          <ul>
-            <li>Feeling in control of her own health</li>
-            <li>Reducing guilt around missed doses</li>
-            <li>Avoiding sensory stress from complex systems</li>
-          </ul>
-        </div>
+        <div class="persona-grid-item"><h4>Goals</h4><ul><li>Never miss a medication dose</li><li>Communicate with her GP without phone calls</li><li>Keep her daily routine as simple as possible</li></ul></div>
+        <div class="persona-grid-item"><h4>Pain Points</h4><ul><li>Alarms become background noise, doses still missed</li><li>Health apps feel cluttered and hard to navigate</li><li>Avoids GP contact due to phone call anxiety</li><li>Migraines make screen use impossible</li></ul></div>
+        <div class="persona-grid-item"><h4>Behaviour</h4><ul><li>Checks phone constantly; dismisses notifications</li><li>Abandons apps that require too much setup</li><li>Easily dysregulated by sensory load</li></ul></div>
+        <div class="persona-grid-item"><h4>Motivations</h4><ul><li>Feeling in control of her own health</li><li>Reducing guilt around missed doses</li><li>Avoiding sensory stress from complex systems</li></ul></div>
       </div>
-      <div class="persona-usage">
-        <h4>How Priya would use HealthApp</h4>
-        <ul>
-          <li>Full-screen reminders with a single large "Taken" button</li>
-          <li>Muted colour tones and non-flashing UI</li>
-          <li>A daily medication tracker she can check at a glance</li>
-          <li>In-app messaging to her GP surgery</li>
-        </ul>
-      </div>
+      <div class="persona-usage"><h4>How Priya would use HealthApp</h4><ul><li>Full-screen reminders with a single large "Taken" button</li><li>Muted colour tones and non-flashing UI</li><li>A daily medication tracker she can check at a glance</li><li>In-app messaging to her GP surgery</li></ul></div>
     </div>
   </div>
-  
-  <!-- PERSONA 2 - DEREK -->
+
   <h3>3.2 Derek Walsh</h3>
-  
   <div class="persona-card">
     <div class="persona-header persona-header-teal">
       <img class="persona-avatar" src="derek.jpg" alt="Photo of Derek Walsh">
@@ -668,12 +263,12 @@
     <div class="persona-quote">"The pharmacist prints everything in tiny writing. My wife reads it for me. I'd rather do it myself."</div>
     <div class="persona-body">
       <dl class="persona-meta">
-        <dt>Age</dt>        <dd>67</dd>
-        <dt>Location</dt>   <dd>Brecon, Wales (rural)</dd>
-        <dt>Occupation</dt>  <dd>Retired builder</dd>
-        <dt>Income</dt>      <dd>State pension + small savings</dd>
-        <dt>Family</dt>      <dd>Married; two adult children nearby</dd>
-        <dt>Digital skills</dt> <dd>Moderate; comfortable with WhatsApp and calls</dd>
+        <dt>Age</dt><dd>67</dd>
+        <dt>Location</dt><dd>Brecon, Wales (rural)</dd>
+        <dt>Occupation</dt><dd>Retired builder</dd>
+        <dt>Income</dt><dd>State pension + small savings</dd>
+        <dt>Family</dt><dd>Married; two adult children nearby</dd>
+        <dt>Digital skills</dt><dd>Moderate; comfortable with WhatsApp and calls</dd>
       </dl>
       <div class="persona-conditions">
         <span class="persona-tag">Dyslexia</span>
@@ -683,131 +278,36 @@
       </div>
       <p style="font-size: 0.88rem; color: #444;">Has struggled with reading his whole life and has moderate hearing loss. Manages Type 2 diabetes and hypertension with daily medication. Comfortable with WhatsApp but rarely uses other apps. Lives rurally, making GP visits require significant planning.</p>
       <div class="persona-grid">
-        <div class="persona-grid-item">
-          <h4>Goals</h4>
-          <ul>
-            <li>Take medications reliably morning and evening</li>
-            <li>Understand health info without asking his wife</li>
-            <li>Never miss a GP appointment due to a lost letter</li>
-          </ul>
-        </div>
-        <div class="persona-grid-item">
-          <h4>Pain Points</h4>
-          <ul>
-            <li>Medication leaflets and letters are hard to read</li>
-            <li>Phone calls difficult with hearing loss</li>
-            <li>Forgets which medications he has taken</li>
-            <li>Embarrassed asking for help with reading</li>
-          </ul>
-        </div>
-        <div class="persona-grid-item">
-          <h4>Behaviour</h4>
-          <ul>
-            <li>Medications twice daily; GP every 1-2 months</li>
-            <li>Cautious but motivated if benefit is clear</li>
-            <li>Wife often present as informal support</li>
-          </ul>
-        </div>
-        <div class="persona-grid-item">
-          <h4>Motivations</h4>
-          <ul>
-            <li>Maintaining independence as he gets older</li>
-            <li>Not being a burden on his wife or children</li>
-            <li>Feeling confident at appointments</li>
-          </ul>
-        </div>
+        <div class="persona-grid-item"><h4>Goals</h4><ul><li>Take medications reliably morning and evening</li><li>Understand health info without asking his wife</li><li>Never miss a GP appointment due to a lost letter</li></ul></div>
+        <div class="persona-grid-item"><h4>Pain Points</h4><ul><li>Medication leaflets and letters are hard to read</li><li>Phone calls difficult with hearing loss</li><li>Forgets which medications he has taken</li><li>Embarrassed asking for help with reading</li></ul></div>
+        <div class="persona-grid-item"><h4>Behaviour</h4><ul><li>Medications twice daily; GP every 1-2 months</li><li>Cautious but motivated if benefit is clear</li><li>Wife often present as informal support</li></ul></div>
+        <div class="persona-grid-item"><h4>Motivations</h4><ul><li>Maintaining independence as he gets older</li><li>Not being a burden on his wife or children</li><li>Feeling confident at appointments</li></ul></div>
       </div>
-      <div class="persona-usage">
-        <h4>How Derek would use HealthApp</h4>
-        <ul>
-          <li>Audio read-aloud for medication info and appointments</li>
-          <li>Large-text, high-contrast interface with adjustable size</li>
-          <li>Icons alongside all text labels</li>
-          <li>Daily tracker with morning/evening split</li>
-          <li>Text-based messaging with his GP</li>
-        </ul>
-      </div>
+      <div class="persona-usage"><h4>How Derek would use HealthApp</h4><ul><li>Audio read-aloud for medication info and appointments</li><li>Large-text, high-contrast interface with adjustable size</li><li>Icons alongside all text labels</li><li>Daily tracker with morning/evening split</li><li>Text-based messaging with his GP</li></ul></div>
     </div>
   </div>
-  
+
   <hr>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- 4. USER JOURNEY MAPS                    -->
-  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="journeys">4. User Journey Maps</h2>
-
   <p>Each journey map follows a persona through a realistic task, surfacing friction points that persona profiles alone cannot reveal.</p>
 
-  <!-- JOURNEY 1 - PRIYA -->
   <h3>4.1 Priya Sharma</h3>
-
   <div class="journey-banner banner-navy">
     <h4>Priya Sharma, 27, Edinburgh. ADHD, ASD, Migraines</h4>
     <p>Scenario: A difficult morning: checking her medication status and messaging her GP about a review</p>
   </div>
-
   <p>Priya woke late after a disrupted night and is not certain which medications she has taken. She also needs to contact her GP to request a medication review, something she has been putting off because she dislikes phone calls. She opens HealthApp expecting a clear summary and a way to message her GP without complex menus.</p>
-
   <table class="journey-table">
-    <tr>
-      <th class="th-navy">Stage</th>
-      <th class="th-navy">Channel</th>
-      <th class="th-navy">User Action</th>
-      <th class="th-navy">Pain Points</th>
-      <th class="th-navy">Emotion</th>
-    </tr>
-    <tr>
-      <td><strong>1. Trigger</strong><br>Missed alarm</td>
-      <td>Smartphone</td>
-      <td>Realises she slept through her reminder. Opens HealthApp.</td>
-      <td>Generic alarms become background noise. Needs persistent reminders.</td>
-      <td><span class="emotion-tag emo-negative">Anxious</span></td>
-    </tr>
-    <tr>
-      <td><strong>2. Home Screen</strong></td>
-      <td>App: Home</td>
-      <td>Dashboard shows today's medications: taken, due, or missed.</td>
-      <td>Previous apps required multiple menus for this view.</td>
-      <td><span class="emotion-tag emo-neutral">Oriented</span></td>
-    </tr>
-    <tr>
-      <td><strong>3. Missed Dose</strong></td>
-      <td>App: Med Tracker</td>
-      <td>Sees morning dose marked missed. Taps for late-dose guidance.</td>
-      <td>Without in-app guidance, she'd search online or skip unsafely.</td>
-      <td><span class="emotion-tag emo-mixed">Unsure</span></td>
-    </tr>
-    <tr>
-      <td><strong>4. Dose Logged</strong></td>
-      <td>App: Med Tracker</td>
-      <td>Takes medication, taps "Mark as Taken". Full-screen confirmation.</td>
-      <td>Extra steps (rating pain, notes) would cause her to abandon the flow.</td>
-      <td><span class="emotion-tag emo-positive">Relieved</span></td>
-    </tr>
-    <tr>
-      <td><strong>5. Schedule</strong></td>
-      <td>App: Med Tracker</td>
-      <td>Checks remaining doses: 1pm and 8pm shown as a simple timeline.</td>
-      <td>Complex calendar views are hard to parse on a difficult day.</td>
-      <td><span class="emotion-tag emo-positive">Informed</span></td>
-    </tr>
-    <tr>
-      <td><strong>6. GP Message</strong></td>
-      <td>App: Messaging</td>
-      <td>Writes a short note to her GP requesting a medication review.</td>
-      <td>Avoided this for weeks because it required a phone call.</td>
-      <td><span class="emotion-tag emo-positive">Empowered</span></td>
-    </tr>
-    <tr>
-      <td><strong>7. Done</strong></td>
-      <td>App: Home</td>
-      <td>Returns to home. One dose taken, two upcoming. Closes app.</td>
-      <td>No remaining friction.</td>
-      <td><span class="emotion-tag emo-positive">Settled</span></td>
-    </tr>
+    <tr><th class="th-navy">Stage</th><th class="th-navy">Channel</th><th class="th-navy">User Action</th><th class="th-navy">Pain Points</th><th class="th-navy">Emotion</th></tr>
+    <tr><td><strong>1. Trigger</strong><br>Missed alarm</td><td>Smartphone</td><td>Realises she slept through her reminder. Opens HealthApp.</td><td>Generic alarms become background noise. Needs persistent reminders.</td><td><span class="emotion-tag emo-negative">Anxious</span></td></tr>
+    <tr><td><strong>2. Home Screen</strong></td><td>App: Home</td><td>Dashboard shows today's medications: taken, due, or missed.</td><td>Previous apps required multiple menus for this view.</td><td><span class="emotion-tag emo-neutral">Oriented</span></td></tr>
+    <tr><td><strong>3. Missed Dose</strong></td><td>App: Med Tracker</td><td>Sees morning dose marked missed. Taps for late-dose guidance.</td><td>Without in-app guidance, she'd search online or skip unsafely.</td><td><span class="emotion-tag emo-mixed">Unsure</span></td></tr>
+    <tr><td><strong>4. Dose Logged</strong></td><td>App: Med Tracker</td><td>Takes medication, taps "Mark as Taken". Full-screen confirmation.</td><td>Extra steps (rating pain, notes) would cause her to abandon the flow.</td><td><span class="emotion-tag emo-positive">Relieved</span></td></tr>
+    <tr><td><strong>5. Schedule</strong></td><td>App: Med Tracker</td><td>Checks remaining doses: 1pm and 8pm shown as a simple timeline.</td><td>Complex calendar views are hard to parse on a difficult day.</td><td><span class="emotion-tag emo-positive">Informed</span></td></tr>
+    <tr><td><strong>6. GP Message</strong></td><td>App: Messaging</td><td>Writes a short note to her GP requesting a medication review.</td><td>Avoided this for weeks because it required a phone call.</td><td><span class="emotion-tag emo-positive">Empowered</span></td></tr>
+    <tr><td><strong>7. Done</strong></td><td>App: Home</td><td>Returns to home. One dose taken, two upcoming. Closes app.</td><td>No remaining friction.</td><td><span class="emotion-tag emo-positive">Settled</span></td></tr>
   </table>
-
   <div class="arc-container">
     <h4>Emotional Arc: Priya</h4>
     <div class="arc-chart">
@@ -821,81 +321,27 @@
       <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">Done</span></div>
     </div>
   </div>
-
   <div class="insight-box insight-navy">
     <strong>Key design insight</strong>
     The steepest drop occurs at Stage 1, before the app is opened. Escalating reminders that persist until acted on would prevent the missed dose that triggers the anxiety spiral. The recovery to high satisfaction by Stage 6 depends on in-app messaging. Without it, Priya has no low-friction route to her GP.
   </div>
 
-  <!-- JOURNEY 2 - DEREK -->
   <h3>4.2 Derek Walsh</h3>
-
   <div class="journey-banner banner-teal">
     <h4>Derek Walsh, 67, Brecon, Wales. Dyslexia, Hearing Impairment, Type 2 Diabetes, Hypertension</h4>
     <p>Scenario: First-time setup: entering medications and confirming an upcoming GP appointment</p>
   </div>
-
   <p>Derek's daughter helped him install HealthApp. He is setting it up for the first time: entering his two medications and checking his upcoming GP appointment. He expects large text, clear icons, and audio support.</p>
-
   <table class="journey-table">
-    <tr>
-      <th class="th-teal">Stage</th>
-      <th class="th-teal">Channel</th>
-      <th class="th-teal">User Action</th>
-      <th class="th-teal">Pain Points</th>
-      <th class="th-teal">Emotion</th>
-    </tr>
-    <tr>
-      <td><strong>1. First Open</strong></td>
-      <td>App: Home</td>
-      <td>Home screen shows two large tiles: "My Medications" and "My Appointments".</td>
-      <td>Too many options on the first screen would overwhelm him.</td>
-      <td><span class="emotion-tag emo-neutral">Cautious</span></td>
-    </tr>
-    <tr>
-      <td><strong>2. Add Medication</strong></td>
-      <td>App: Med Setup</td>
-      <td>Taps "Add Medication" and types the name using autocorrect suggestions.</td>
-      <td>Spelling medication names is difficult with dyslexia.</td>
-      <td><span class="emotion-tag emo-mixed">Focused</span></td>
-    </tr>
-    <tr>
-      <td><strong>3. Audio Support</strong></td>
-      <td>App: Med Setup</td>
-      <td>Taps the audio icon. A voice reads the field label and explains what to enter.</td>
-      <td>Without audio, he'd enter wrong info or stop and ask his wife.</td>
-      <td><span class="emotion-tag emo-positive">Reassured</span></td>
-    </tr>
-    <tr>
-      <td><strong>4. Set Reminder</strong></td>
-      <td>App: Med Setup</td>
-      <td>Uses the large time-wheel picker to set 8am and 8pm doses.</td>
-      <td>Small text input for time entry would be error-prone.</td>
-      <td><span class="emotion-tag emo-positive">Confident</span></td>
-    </tr>
-    <tr>
-      <td><strong>5. Confirmation</strong></td>
-      <td>App: Med Setup</td>
-      <td>Summary shows both medications with icons (sun for morning, moon for evening).</td>
-      <td>Icons allow visual confirmation without relying on reading.</td>
-      <td><span class="emotion-tag emo-positive">Satisfied</span></td>
-    </tr>
-    <tr>
-      <td><strong>6. Appointment</strong></td>
-      <td>App: Appointments</td>
-      <td>Taps "My Appointments". GP visit on Friday is listed. Confirms reminder is on.</td>
-      <td>Has missed appointments because he couldn't read the letter.</td>
-      <td><span class="emotion-tag emo-positive">Organised</span></td>
-    </tr>
-    <tr>
-      <td><strong>7. GP Message</strong></td>
-      <td>App: Messaging</td>
-      <td>Sends a message asking what to bring to the visit.</td>
-      <td>Phoning is difficult with hearing impairment.</td>
-      <td><span class="emotion-tag emo-positive">Independent</span></td>
-    </tr>
+    <tr><th class="th-teal">Stage</th><th class="th-teal">Channel</th><th class="th-teal">User Action</th><th class="th-teal">Pain Points</th><th class="th-teal">Emotion</th></tr>
+    <tr><td><strong>1. First Open</strong></td><td>App: Home</td><td>Home screen shows two large tiles: "My Medications" and "My Appointments".</td><td>Too many options on the first screen would overwhelm him.</td><td><span class="emotion-tag emo-neutral">Cautious</span></td></tr>
+    <tr><td><strong>2. Add Medication</strong></td><td>App: Med Setup</td><td>Taps "Add Medication" and types the name using autocorrect suggestions.</td><td>Spelling medication names is difficult with dyslexia.</td><td><span class="emotion-tag emo-mixed">Focused</span></td></tr>
+    <tr><td><strong>3. Audio Support</strong></td><td>App: Med Setup</td><td>Taps the audio icon. A voice reads the field label and explains what to enter.</td><td>Without audio, he'd enter wrong info or stop and ask his wife.</td><td><span class="emotion-tag emo-positive">Reassured</span></td></tr>
+    <tr><td><strong>4. Set Reminder</strong></td><td>App: Med Setup</td><td>Uses the large time-wheel picker to set 8am and 8pm doses.</td><td>Small text input for time entry would be error-prone.</td><td><span class="emotion-tag emo-positive">Confident</span></td></tr>
+    <tr><td><strong>5. Confirmation</strong></td><td>App: Med Setup</td><td>Summary shows both medications with icons (sun for morning, moon for evening).</td><td>Icons allow visual confirmation without relying on reading.</td><td><span class="emotion-tag emo-positive">Satisfied</span></td></tr>
+    <tr><td><strong>6. Appointment</strong></td><td>App: Appointments</td><td>Taps "My Appointments". GP visit on Friday is listed. Confirms reminder is on.</td><td>Has missed appointments because he couldn't read the letter.</td><td><span class="emotion-tag emo-positive">Organised</span></td></tr>
+    <tr><td><strong>7. GP Message</strong></td><td>App: Messaging</td><td>Sends a message asking what to bring to the visit.</td><td>Phoning is difficult with hearing impairment.</td><td><span class="emotion-tag emo-positive">Independent</span></td></tr>
   </table>
-
   <div class="arc-container">
     <h4>Emotional Arc: Derek</h4>
     <div class="arc-chart">
@@ -909,14 +355,12 @@
       <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">GP message</span></div>
     </div>
   </div>
-
   <div class="insight-box insight-teal">
     <strong>Key design insight</strong>
     Derek's journey has no sharp drops, but only because the accessibility layer works correctly at every step. Audio support at Stage 3 is pivotal: without it, setup stalls entirely. Every screen must offer a non-text route through it.
   </div>
 
   <h3>4.3 Cross-Journey Insights</h3>
-
   <ol>
     <li><strong>Reminders must be persistent, not passive.</strong> Both users risk missing doses. Priya through attention difficulties, Derek through habit and memory. A notification that disappears when dismissed is insufficient.</li>
     <li><strong>Logging must be one tap.</strong> Both journeys require dose confirmation in the fewest possible interactions.</li>
@@ -925,51 +369,90 @@
 
   <hr>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- 5. SKETCHES                             -->
-  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="sketches">5. Sketches &amp; Storyboard</h2>
-
   <p>The sketch below maps out the main screens of HealthApp and the navigation paths between them.</p>
-
-  <img src="sketches.jpg" alt="Hand-drawn sketches showing the HealthApp screen flow, including home menu, medication management, reminders, medication usage, appointments, and messaging screens" style="max-width: 100%; border: 1px solid #ddd; border-radius: 4px; margin: 1rem 0;">
-
+  <img src="sketches.jpg" alt="Hand-drawn sketches showing the HealthApp screen flow" style="max-width: 100%; border: 1px solid #ddd; border-radius: 4px; margin: 1rem 0;">
   <h4>Screens shown</h4>
   <table>
     <tr><th>Screen</th><th>Key elements</th></tr>
-    <tr>
-      <td><strong>Home / Menu</strong></td>
-      <td>Central navigation hub with five main options: Med Management, Reminders, Medications, Appointments, and Messaging. Each option has an icon alongside the label for accessibility.</td>
-    </tr>
-    <tr>
-      <td><strong>Medication Management</strong></td>
-      <td>"+ Add" button at the top to add new medications. Below it, a scrollable list of current medications with dosage information.</td>
-    </tr>
-    <tr>
-      <td><strong>Reminders</strong></td>
-      <td>Toggle options for vibrations and sounds. List of medications with "Mark as Taken" and "Remind me at" actions. Voice input option for accessibility. Distinguishes between taken and pending doses with colour coding.</td>
-    </tr>
-    <tr>
-      <td><strong>Reminder Notification</strong></td>
-      <td>Push notification showing pill name, time (9:00), dosage ("Take 2 red Pill"), and a large "Confirm as Taken" button.</td>
-    </tr>
-    <tr>
-      <td><strong>Medication Usage</strong></td>
-      <td>Shows today's date with a checklist of doses taken. Links to a monthly calendar view (History) with check marks for completed days and colour highlights for missed doses.</td>
-    </tr>
-    <tr>
-      <td><strong>Appointments</strong></td>
-      <td>Lists upcoming appointments with date, time, doctor name, location, and an audio read-aloud icon. Links to a full calendar view at the bottom.</td>
-    </tr>
-    <tr>
-      <td><strong>Messaging</strong></td>
-      <td>Options to call or text a doctor. Message thread view with a text input field, draft/send buttons, and a linked doctor dashboard showing message history.</td>
-    </tr>
+    <tr><td><strong>Home / Menu</strong></td><td>Central navigation hub with five main options: Med Management, Reminders, Medications, Appointments, and Messaging. Each option has an icon alongside the label for accessibility.</td></tr>
+    <tr><td><strong>Medication Management</strong></td><td>"+ Add" button at the top to add new medications. Below it, a scrollable list of current medications with dosage information.</td></tr>
+    <tr><td><strong>Reminders</strong></td><td>Toggle options for vibrations and sounds. List of medications with "Mark as Taken" and "Remind me at" actions. Voice input option for accessibility. Distinguishes between taken and pending doses with colour coding.</td></tr>
+    <tr><td><strong>Reminder Notification</strong></td><td>Push notification showing pill name, time (9:00), dosage ("Take 2 red Pill"), and a large "Confirm as Taken" button.</td></tr>
+    <tr><td><strong>Medication Usage</strong></td><td>Shows today's date with a checklist of doses taken. Links to a monthly calendar view (History) with check marks for completed days and colour highlights for missed doses.</td></tr>
+    <tr><td><strong>Appointments</strong></td><td>Lists upcoming appointments with date, time, doctor name, location, and an audio read-aloud icon. Links to a full calendar view at the bottom.</td></tr>
+    <tr><td><strong>Messaging</strong></td><td>Options to call or text a doctor. Message thread view with a text input field, draft/send buttons, and a linked doctor dashboard showing message history.</td></tr>
   </table>
+
   <hr>
 
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 6. WIREFRAMES & PROTOTYPE               -->
+  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="wireframes">6. Wireframes &amp; Prototype</h2>
-  <p><em>Coming next.</em></p>
+
+  <p>The wireframes below represent the core screens of HealthApp. Every screen follows the principles identified in our research: large tap targets, icons alongside text labels, audio read-aloud buttons where text is present, and minimal navigation depth.</p>
+
+  <h3>6.1 Home Screen</h3>
+
+  <p>The home screen acts as a central hub. A personalised greeting and today's date orient the user immediately. Below, a medication status card shows how many doses have been taken out of the day's total, with a progress bar for quick visual feedback. Four large tiles (My Medications, My Appointments, Messages, Settings) provide one-tap access to every major feature. A persistent bottom navigation bar offers shortcuts to Home, Tracker, and Settings from any screen.</p>
+
+  <img src="HomeScreen.png" alt="Home screen wireframe showing greeting, medication status progress bar, and four navigation tiles" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.2 My Medications</h3>
+
+  <p>This screen lists all active medications with their dosage and form (e.g. "1 tablet"). Sun and moon icons beside each entry indicate whether the dose is scheduled for morning, evening, or both, allowing visual confirmation without reading. A prominent "+ Add Medication" button sits at the top. An audio icon in the header enables read-aloud of the full list.</p>
+
+  <img src="MyMedications.png" alt="My Medications screen showing a list of three medications with sun and moon schedule icons" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.3 Add Medication</h3>
+
+  <p>The add medication form is structured into three clearly labelled sections: Medication Name (with autocomplete suggestions to assist users with dyslexia), Dosage (split into Amount and Unit fields), and Schedule (using large sun/moon cards for morning and evening times). Day-of-week selectors allow flexible scheduling. Each section has its own audio icon so users can hear field labels read aloud. A single "Save Medication" button completes the flow.</p>
+
+  <img src="AddMedication.png" alt="Add Medication form with name field, dosage inputs, and morning/evening schedule cards" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.4 Medication Reminder Notification</h3>
+
+  <p>When a dose is due, a full-screen notification appears showing the medication name, dosage instruction, and current time. The layout is deliberately simple: a large pill icon, bold text, and a single prominent "Mark as Taken" button. Two secondary options ("Remind me in 15 min" and "Skip this dose") sit below. This screen directly addresses the research finding that standard alarms are too easy to dismiss.</p>
+
+  <img src="Notification.png" alt="Full-screen medication reminder with large Mark as Taken button and options to snooze or skip" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.5 Tracker</h3>
+
+  <p>The tracker organises the day's doses into Morning, Afternoon, and Evening sections. Each medication card shows the name, dosage, and status. Completed doses display a filled checkmark and timestamp. Pending doses show a "Mark as Taken" button. Date navigation arrows at the top let users review past days, and a "View Monthly History" link at the bottom connects to a calendar view for longer-term adherence tracking.</p>
+
+  <img src="Tracker.png" alt="Daily tracker screen divided into morning, afternoon, and evening sections with dose status" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.6 My Appointments</h3>
+
+  <p>Upcoming appointments are displayed as cards showing the date, time, doctor name, specialty, and location. Each card includes an audio icon for read-aloud and a reminder toggle. The "+ Add Appointment" button at the top mirrors the medication screen layout for consistency. This screen directly supports Derek's journey, where missed appointments stemmed from lost or unreadable letters.</p>
+
+  <img src="Appointments.png" alt="Appointments screen listing two upcoming visits with reminder toggles and audio icons" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.7 Messaging</h3>
+
+  <p>The messaging screen uses a familiar chat layout. Messages from the healthcare professional appear on the left in light bubbles; the user's messages appear on the right in dark bubbles. Timestamps are shown below each message. An audio icon in the header allows the full conversation to be read aloud. The text input field notes that autocorrect is enabled, supporting users with dyslexia. This feature resolves the phone-call barrier identified for both personas.</p>
+
+  <img src="Messaging.png" alt="Chat conversation with Dr. Patel showing appointment confirmation and user reply" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
+
+  <h3>6.8 Design Decisions</h3>
+
+  <table>
+    <tr><th>Decision</th><th>Rationale</th></tr>
+    <tr><td>Greyscale palette</td><td>Keeps wireframes focused on layout and hierarchy; avoids premature colour choices that may fail contrast requirements</td></tr>
+    <tr><td>Icons paired with every text label</td><td>Supports users with dyslexia and low literacy by providing a non-text route through each screen</td></tr>
+    <tr><td>Audio read-aloud on all content screens</td><td>Directly addresses the needs of Derek and similar users who struggle with reading</td></tr>
+    <tr><td>Full-screen reminder notification</td><td>Prevents the "dismissed and forgotten" problem reported by 75% of survey respondents</td></tr>
+    <tr><td>One-tap dose logging</td><td>Reduces friction identified in both user journeys; extra steps caused users to abandon the flow</td></tr>
+    <tr><td>Morning/evening sun and moon icons</td><td>Allows schedule recognition without reading, as identified in Derek's persona</td></tr>
+    <tr><td>Autocomplete on medication names</td><td>Assists users with dyslexia who find spelling medication names difficult</td></tr>
+    <tr><td>Consistent bottom navigation</td><td>Reduces cognitive load by keeping navigation predictable across all screens</td></tr>
+  </table>
+
+  <h3>6.9 Prototype</h3>
+
+  <p>A clickable prototype was built in Figma connecting all seven screens above. The prototype demonstrates the primary user flows: viewing the home dashboard, adding a medication, responding to a reminder notification, logging a dose in the tracker, checking appointments, and messaging a healthcare professional. Navigation between screens follows the paths outlined in the sketches (Section 5).</p>
+
   <hr>
 
   <h2 class="section-heading" id="testing">7. Usability Testing</h2>
