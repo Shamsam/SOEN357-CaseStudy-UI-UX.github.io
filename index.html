@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HealthApp — UX/UI Case Study</title>
+  <title>HealthApp - UX/UI Case Study</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -172,8 +172,7 @@
     }
     .banner-navy { background: #1a3c5e; }
     .banner-teal { background: #1a7a6e; }
-    .banner-amber { background: #b05218; }
-    
+
     .journey-table {
       width: 100%;
       border-collapse: collapse;
@@ -200,8 +199,7 @@
     }
     .th-navy { background: #1a3c5e; }
     .th-teal { background: #1a7a6e; }
-    .th-amber { background: #b05218; }
-    
+
     .emotion-tag {
       display: inline-block;
       font-size: 0.7rem;
@@ -215,8 +213,7 @@
     .emo-mixed { background: #e65100; }
     .emo-neutral { background: #666; }
     .emo-positive { background: #2e7d32; }
-    
-    /* Emotional arc chart */
+
     .arc-container {
       background: #f8f8f8;
       border: 1px solid #e5e5e5;
@@ -265,7 +262,6 @@
       width: 22px;
       border-radius: 3px 3px 0 0;
       min-height: 4px;
-      transition: height 0.3s;
     }
     .arc-bar-label {
       position: absolute;
@@ -277,23 +273,7 @@
       transform-origin: top left;
       left: 50%;
     }
-    .arc-line {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 1.6rem;
-      pointer-events: none;
-    }
-    .arc-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      position: absolute;
-      transform: translate(-50%, 50%);
-    }
-    
-    /* Insight box */
+
     .insight-box {
       border-left: 3px solid #999;
       background: #f8f8f8;
@@ -307,7 +287,6 @@
     }
     .insight-navy { border-left-color: #1a3c5e; }
     .insight-teal { border-left-color: #1a7a6e; }
-    .insight-amber { border-left-color: #b05218; }
   </style>
 </head>
 <body>
@@ -316,7 +295,7 @@
   <div class="title-block">
     <h1>HealthApp</h1>
     <div class="subtitle">UX/UI Design of a Health Companion Super App</div>
-    <div class="meta">SOEN 357 — Winter 2026 | Mini Project</div>
+    <div class="meta">SOEN 357 - Winter 2026 | Mini Project</div>
   </div>
 
   <div class="toc">
@@ -333,23 +312,23 @@
     </ol>
   </div>
 
-  <!-- 1. INTRODUCTION -->
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 1. INTRODUCTION                         -->
+  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="introduction">1. Introduction</h2>
 
   <h3>1.1 The Problem</h3>
 
-  <p>Managing a chronic health condition is not a continuous, daily effort that spans multiple responsibilities:</p>
+  <p>Managing a chronic health condition is a continuous, daily effort:</p>
 
   <ul>
-    <li>Remembering and taking medications on different schedules throughout the day</li>
-    <li>Tracking what has been taken, missed, or skipped, and communicating that accurately to medical professionals</li>
-    <li>Managing appointments </li>
-    <li>Understanding health information that is often written in complex medical language</li>
+    <li>Remembering and taking medications on different schedules</li>
+    <li>Tracking what has been taken, missed, or skipped</li>
+    <li>Managing appointments across multiple healthcare professionals</li>
+    <li>Understanding health information often written in complex medical language</li>
   </ul>
 
-  <p>For many users, this administrative load sits on top of the condition itself. Someone with <strong>ADHD</strong> may struggle with the routine and self-regulation that medication adherence requires. An older adult with <strong>dyslexia</strong> may be unable to read the information printed on a medication leaflet. A caretaker managing medications for a family member with <strong>severe ASD</strong> has no margin for error and no reliable system to fall back on.</p>
-
-  <p>Existing tools rarely account for this complexity. Generic reminder apps are not built around multi-medication schedules. Patient portals are text-heavy and difficult to navigate. Paper-based systems get lost and provide no safety net when a dose is missed. The result is a significant gap between what people need to manage their health and what available tools can provide.</p>
+  <p>Someone with <strong>ADHD</strong> may struggle with the self-regulation medication adherence requires. An older adult with <strong>dyslexia</strong> may be unable to read a medication leaflet. Existing tools (generic reminder apps, text-heavy patient portals, paper-based systems) rarely account for this complexity.</p>
 
   <h3>1.2 The Solution</h3>
 
@@ -360,728 +339,416 @@
     <tr><td><strong>Medication management</strong></td><td>Add and manage medications, dosages, and schedules in one place</td></tr>
     <tr><td><strong>Medication reminders</strong></td><td>Persistent notifications that remain visible until the dose is logged</td></tr>
     <tr><td><strong>Usage tracking</strong></td><td>A clear log of every dose with timestamps</td></tr>
-    <tr><td><strong>Appointment management</strong></td><td>Store, view, and receive reminders for upcoming healthcare appointments</td></tr>
-    <tr><td><strong>Healthcare communication</strong></td><td>In-app messaging with medical professionals, replacing phone calls</td></tr>
+    <tr><td><strong>Appointment management</strong></td><td>Store, view, and receive reminders for upcoming appointments</td></tr>
+    <tr><td><strong>Healthcare communication</strong></td><td>In-app messaging with medical professionals</td></tr>
   </table>
 
-  <p>The app is built from the outset for users who face accessibility barriers. This means prioritising:</p>
-
-  <ul>
-    <li>Plain language and simple sentences throughout the interface</li>
-    <li>Audio alternatives to all text content</li>
-    <li>Adjustable contrast and text size</li>
-    <li>Descriptive buttons and consistent, simple layouts</li>
-    <li>Icons alongside text so users can navigate without relying on reading alone</li>
-  </ul>
+  <p>The app prioritises accessibility as a core design decision: plain language, audio alternatives, adjustable contrast and text size, descriptive buttons, icons alongside text, and consistent layouts throughout.</p>
 
   <h3>1.3 Target Users</h3>
 
-  <p>HealthApp serves three broad user groups:</p>
-
   <ol>
-    <li><strong>Individuals managing their own chronic conditions</strong> — people with ADHD, ASD, migraines, dyslexia, hearing impairment, or visual impairment who need an app that works with their access needs rather than against them.</li>
-    <li><strong>Older adults</strong> — users who are less digitally confident but highly motivated to manage their health independently, and who may face barriers including hearing loss, reading difficulty, or unfamiliarity with app conventions.</li>
-    <li><strong>Caretakers</strong> — family members or carers who manage medications and appointments on behalf of someone who cannot do so themselves.</li>
+    <li><strong>Individuals managing their own chronic conditions</strong>: people with ADHD, ASD, migraines, dyslexia, hearing impairment, or visual impairment</li>
+    <li><strong>Older adults</strong>: less digitally confident but motivated to manage their health independently</li>
+    <li><strong>Caretakers</strong>: managing medications and appointments on behalf of someone who cannot do so themselves</li>
   </ol>
 
   <hr>
 
-  <!-- 2. USER RESEARCH -->
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 2. USER RESEARCH                        -->
+  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="research">2. User Research</h2>
 
-  <p>To understand the needs, challenges, and behaviours of our target users, we used two complementary research methods: surveys and semi-structured interviews. Our approach was designed to be accessible and multi-channel, since the target population faces significant barriers with standard digital research tools.</p>
+  <p>We used two complementary research methods, surveys and semi-structured interviews, designed to be accessible and multi-channel for a population that faces barriers with standard digital tools.</p>
 
   <h3>2.1 Surveys</h3>
 
-  <p>Surveys allowed us to collect structured data from a broad range of participants. Given that our target users include older adults and people with significant accessibility needs, both the survey design and distribution had to be accessible themselves.</p>
-
   <h4>Distribution channels</h4>
   <ul>
-    <li><strong>Television and newspaper advertisements</strong> — to reach older adults managing long-term conditions or caring for someone who is</li>
-    <li><strong>Online text-based surveys</strong> — shared via health forums, carer networks, and GP surgery websites</li>
-    <li><strong>Phone-based surveys</strong> — for participants not comfortable with digital tools, or who have visual or motor impairments</li>
-    <li><strong>Caretakers</strong> — explicitly invited to complete surveys on behalf of the people they support, as they often have deep firsthand knowledge of their patient's needs</li>
+    <li><strong>TV and newspaper ads</strong>: to reach older adults</li>
+    <li><strong>Online text-based surveys</strong>: shared via health forums and GP surgery websites</li>
+    <li><strong>Phone-based surveys</strong>: for participants with visual or motor impairments</li>
+    <li><strong>Caretakers</strong>: invited to respond on behalf of those they support</li>
   </ul>
 
-  <h4>Survey design</h4>
-  <p>The survey included three types of questions:</p>
+  <h4>Question types</h4>
   <ul>
-    <li><strong>Spectrum answers</strong> — for measuring frequency, satisfaction, and difficulty</li>
-    <li><strong>Multiple choice</strong> — for demographics, conditions, device usage, and tool preferences</li>
-    <li><strong>Optional open-text or voice-input responses</strong> — for participants who wanted to describe their experience in more detail</li>
+    <li><strong>Spectrum answers</strong> (Likert scales): frequency, satisfaction, difficulty</li>
+    <li><strong>Multiple choice</strong>: demographics, conditions, device usage, preferences</li>
+    <li><strong>Optional open-text or voice-input</strong>: for more detailed responses</li>
   </ul>
-
-  <p>Topics covered: medication frequency, current health management tools, pain points with existing systems, preferred notification types, device usage, accessibility needs, and whether the respondent was a patient or caretaker.</p>
 
   <h3>2.2 Interviews</h3>
 
-  <p>Semi-structured interviews (30–45 minutes) provided depth that surveys alone cannot capture.</p>
+  <p>Semi-structured interviews (30–45 minutes) were offered via video call (with captions), phone, or in-person. Participants included people managing multiple chronic conditions and older adults with lower digital confidence. Topics covered daily routines, missed medications, GP communication challenges, current tools, and reactions to design concepts.</p>
 
-  <p>Interviews were offered via:</p>
-  <ul>
-    <li><strong>Video call</strong> (with captions enabled)</li>
-    <li><strong>Phone</strong></li>
-    <li><strong>In-person</strong></li>
-  </ul>
-
-  <p>Participants included people managing two or more chronic conditions, caretakers, and older adults with lower digital confidence. Key topics covered:</p>
-  <ul>
-    <li>Daily health management tasks and routines</li>
-    <li>Experiences with missed medications or forgotten appointments</li>
-    <li>Challenges communicating with GPs or specialists</li>
-    <li>Current tools used (apps, paper charts, reminders) and their shortcomings</li>
-    <li>Early reactions to HealthApp design concepts</li>
-  </ul>
-
-  <h3>2.3 Survey Results</h3>
-
-  <p>We received 12 survey responses. Below is a summary of key findings.</p>
-
-  <h4>Participant demographics</h4>
+  <h3>2.3 Survey Results (12 responses)</h3>
 
   <table>
     <tr><th>Category</th><th>Breakdown</th></tr>
-    <tr><td>Total responses</td><td>12</td></tr>
     <tr><td>Responding as patient</td><td>8 (67%)</td></tr>
     <tr><td>Responding as caretaker</td><td>4 (33%)</td></tr>
     <tr><td>Age range</td><td>22–74</td></tr>
-    <tr><td>Conditions represented</td><td>ADHD, ASD, Type 2 Diabetes, Epilepsy, Migraines, Dyslexia, Hearing impairment, Hypertension</td></tr>
+    <tr><td>Conditions</td><td>ADHD, ASD, Type 2 Diabetes, Epilepsy, Migraines, Dyslexia, Hearing impairment, Hypertension</td></tr>
   </table>
 
-  <h4>Medication management</h4>
+  <h4>Key findings</h4>
   <ul>
-    <li>10 of 12 respondents (83%) take medication daily</li>
-    <li>7 of 12 (58%) manage two or more medications on different schedules</li>
-    <li>9 of 12 (75%) reported missing at least one dose per week</li>
-    <li>The most common reason for missed doses was <strong>forgetting</strong> (10 respondents), followed by <strong>confusing schedules</strong> (5) and <strong>being away from home</strong> (4)</li>
-  </ul>
-
-  <h4>Current tools</h4>
-  <ul>
-    <li>5 respondents relied on <strong>phone alarms</strong> as their primary reminder method</li>
-    <li>4 used <strong>paper charts or notebooks</strong></li>
-    <li>2 used a <strong>health app</strong> (neither was satisfied with it)</li>
-    <li>1 relied on a <strong>caretaker's memory</strong> alone</li>
-  </ul>
-
-  <h4>Pain points with existing tools</h4>
-  <ul>
-    <li>"Alarms are easy to dismiss and I forget what they were for" (3 respondents)</li>
-    <li>"The app I tried had too many features and tiny text" (2 respondents)</li>
-    <li>"I can't read the medication leaflets. The print is too small" (2 respondents)</li>
-    <li>"I have no way to confirm later whether I actually took my morning dose" (4 respondents)</li>
-    <li>"Calling the GP is difficult with my hearing." (2 respondents)</li>
-  </ul>
-
-  <h4>Appointment management</h4>
-  <ul>
+    <li>10 of 12 (83%) take medication daily; 7 manage two or more on different schedules</li>
+    <li>9 of 12 (75%) miss at least one dose per week, top reason: <strong>forgetting</strong></li>
+    <li>5 rely on phone alarms, 4 on paper charts, 2 on health apps (neither satisfied), 1 on a caretaker's memory</li>
     <li>6 of 12 (50%) had missed or nearly missed an appointment in the past six months</li>
-    <li>The most common reasons: <strong>forgetting the date</strong> (5), <strong>not reading the appointment letter in time</strong> (3), and <strong>confusing details across multiple specialists</strong> (3)</li>
-    <li>8 of 12 (67%) said they would prefer to receive appointment reminders through an app rather than by letter or phone call</li>
+    <li>9 of 12 (75%) would prefer <strong>text-based messaging</strong> with their GP over phone calls</li>
   </ul>
 
-  <h4>Communication preferences</h4>
+  <h4>Pain points (quoted from respondents)</h4>
   <ul>
-    <li>9 of 12 (75%) said they would prefer <strong>text-based messaging</strong> with their GP over phone calls</li>
-    <li>Reasons included: hearing difficulty (3), phone anxiety (3), wanting a written record (2), and finding it easier to explain symptoms in writing (4)</li>
+    <li>"Alarms are easy to dismiss and I forget what they were for"</li>
+    <li>"The app I tried had too many features and tiny text"</li>
+    <li>"I have no way to confirm later whether I actually took my morning dose"</li>
+    <li>"Calling the GP is difficult with my hearing"</li>
   </ul>
 
-  <h4>Accessibility needs (multiple selections allowed)</h4>
+  <h4>Accessibility needs (multiple selections)</h4>
 
   <table>
     <tr><th>Need</th><th>Respondents</th></tr>
-    <tr><td>Larger text / adjustable text size</td><td>8</td></tr>
-    <tr><td>Audio read-aloud for on-screen text</td><td>5</td></tr>
     <tr><td>Simple, uncluttered layout</td><td>9</td></tr>
-    <tr><td>High contrast mode</td><td>4</td></tr>
+    <tr><td>Larger text / adjustable text size</td><td>8</td></tr>
     <tr><td>Icons alongside text labels</td><td>6</td></tr>
+    <tr><td>Audio read-aloud</td><td>5</td></tr>
+    <tr><td>High contrast mode</td><td>4</td></tr>
     <tr><td>Autocorrect / spelling suggestions</td><td>3</td></tr>
   </table>
 
   <h3>2.4 Interview Highlights</h3>
 
-  <p>We conducted 4 in-depth interviews. Below are key quotes and observations.</p>
+  <blockquote>"I set three alarms for my tablets and I still miss them. By the third alarm I've convinced myself I already took them." - Participant A, 29, ADHD &amp; migraines</blockquote>
 
-  <blockquote>"I set three alarms for my tablets and I still miss them. By the third alarm I've convinced myself I already took them." — Participant A, 29, ADHD &amp; migraines</blockquote>
+  <blockquote>"I'd love to message my GP instead of phoning. By the time I get through the phone menu I've forgotten what I wanted to say." - Participant C, 71, dyslexia &amp; hearing impairment</blockquote>
 
-  <blockquote>"My son can't tell me if he's feeling unwell. I track everything in a notebook, but when we see his neurologist I can never find the right page." — Participant B, 48, caretaker for son with ASD &amp; epilepsy</blockquote>
+  <blockquote>"Every health app I've tried looks like it was designed for a 25-year-old with perfect vision. I just want big buttons and plain English." - Participant D, 66, Type 2 diabetes &amp; hypertension</blockquote>
 
-  <blockquote>"I'd love to message my GP instead of phoning. By the time I get through the phone menu I've forgotten what I wanted to say." — Participant C, 71, dyslexia &amp; hearing impairment</blockquote>
-
-  <blockquote>"Every health app I've tried looks like it was designed for a 25-year-old with perfect vision. I just want big buttons and plain English." — Participant D, 66, Type 2 diabetes &amp; hypertension</blockquote>
-
-  <p>Common themes across interviews:</p>
-  <ul>
-    <li><strong>Alarm fatigue</strong> — reminders that are too easy to dismiss stop working within weeks</li>
-    <li><strong>Fragmented records</strong> — medication logs, appointment letters, and GP communication are spread across multiple systems</li>
-    <li><strong>Accessibility as a prerequisite, not a feature</strong> — participants did not want an "accessible mode" buried in settings; they needed the default experience to work for them</li>
-    <li><strong>Caretaker burden</strong> — caretakers described managing health admin as a second job with no reliable tools</li>
-    <li><strong>Phone call avoidance</strong> — multiple participants described avoiding contact with their GP because the only option was a phone call</li>
-  </ul>
+  <p>Common themes: alarm fatigue, fragmented records across multiple systems, accessibility as a prerequisite rather than an optional mode, and phone call avoidance.</p>
 
   <h3>2.5 Synthesis</h3>
 
-  <p>The research confirmed three core design priorities for HealthApp:</p>
+  <p>The research confirmed three core design priorities:</p>
   <ol>
-    <li><strong>Reminders must be persistent and hard to ignore</strong> — standard alarms are not effective for this population</li>
-    <li><strong>Logging a dose must be achievable in one tap</strong> — any additional steps lead to incomplete records</li>
-    <li><strong>Text-based GP communication is essential</strong> — phone calls are a barrier for the majority of target users</li>
+    <li><strong>Reminders must be persistent</strong>: standard alarms are not effective</li>
+    <li><strong>Dose logging must be one tap</strong>: extra steps lead to incomplete records</li>
+    <li><strong>Text-based GP communication is essential</strong>: phone calls are a barrier for most target users</li>
   </ol>
 
   <hr>
 
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 3. USER PERSONAS                        -->
+  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="personas">3. User Personas</h2>
 
-<p>Based on our research findings, we developed three personas representing distinct user groups: a young adult managing multiple conditions independently, an older adult with accessibility needs, and a caretaker managing health on behalf of someone else.</p>
+  <p>Based on our research, we developed two personas representing distinct user groups: a young adult managing multiple conditions independently, and an older adult with accessibility needs.</p>
 
-<!-- PERSONA 1 -->
-<h3>3.1 Persona 1 — Priya Sharma</h3>
+  <!-- PERSONA 1 - PRIYA -->
+  <h3>3.1 Priya Sharma</h3>
 
-<table>
-  <tr><th>Attribute</th><th>Detail</th></tr>
-  <tr><td>Age</td><td>27</td></tr>
-  <tr><td>Location</td><td>Edinburgh, Scotland</td></tr>
-  <tr><td>Occupation</td><td>Part-time QA Tester (remote)</td></tr>
-  <tr><td>Income</td><td>£22,000/yr</td></tr>
-  <tr><td>Family</td><td>Lives alone; close contact with parents</td></tr>
-  <tr><td>Conditions</td><td>ADHD, ASD, Migraines</td></tr>
-</table>
+  <table>
+    <tr><th>Attribute</th><th>Detail</th></tr>
+    <tr><td>Age</td><td>27</td></tr>
+    <tr><td>Location</td><td>Edinburgh, Scotland</td></tr>
+    <tr><td>Occupation</td><td>Part-time QA Tester (remote)</td></tr>
+    <tr><td>Income</td><td>£22,000/yr</td></tr>
+    <tr><td>Family</td><td>Lives alone; close contact with parents</td></tr>
+    <tr><td>Conditions</td><td>ADHD, ASD, Migraines</td></tr>
+  </table>
 
-<blockquote>"I know I have to take my medication. I just forget. And then I feel guilty about forgetting, which makes everything worse."</blockquote>
+  <blockquote>"I know I have to take my medication. I just forget. And then I feel guilty about forgetting, which makes everything worse."</blockquote>
 
-<h4>Background</h4>
-<p>Priya was diagnosed with ADHD at 16 and ASD at 22. She works part-time from home as a software QA tester. She experiences chronic migraines, often triggered by sensory overload or disrupted sleep, and manages three medications on different schedules. She is digitally confident and uses her phone extensively, but finds most health apps visually overwhelming or unnecessarily complex.</p>
+  <h4>Background</h4>
+  <p>Priya was diagnosed with ADHD at 16 and ASD at 22. She works part-time from home and manages three medications on different schedules. She is digitally confident but finds most health apps visually overwhelming.</p>
 
-<h4>Goals</h4>
-<ul>
-  <li>Never miss a medication dose</li>
-  <li>Arrive at GP appointments feeling prepared</li>
-  <li>Communicate with her GP without making phone calls</li>
-  <li>Keep her daily health routine as simple as possible</li>
-</ul>
+  <h4>Goals</h4>
+  <ul>
+    <li>Never miss a medication dose</li>
+    <li>Communicate with her GP without phone calls</li>
+    <li>Keep her daily health routine as simple as possible</li>
+  </ul>
 
-<h4>Motivations</h4>
-<ul>
-  <li>Feeling in control of her own health</li>
-  <li>Reducing guilt around missed doses</li>
-  <li>Having a simple, predictable daily routine</li>
-  <li>Avoiding sensory stress from complex systems</li>
-</ul>
+  <h4>Pain points</h4>
+  <ul>
+    <li>Alarms become background noise, and doses are still missed</li>
+    <li>Health apps feel cluttered and hard to navigate</li>
+    <li>Avoids contacting her GP because she dislikes phone calls</li>
+    <li>Migraines leave her unable to interact with screens</li>
+  </ul>
 
-<h4>Pain points</h4>
-<ul>
-  <li>Alarms become background noise</li>
-  <li>Health apps feel cluttered and hard to navigate</li>
-  <li>Struggles to articulate symptoms during appointments</li>
-  <li>Avoids contacting her GP because she dislikes phone calls</li>
-  <li>Migraines leave her unable to interact with screens</li>
-</ul>
+  <h4>Behaviour</h4>
+  <ul>
+    <li><strong>Frequency:</strong> Checks phone constantly; often dismisses notifications</li>
+    <li><strong>Skills:</strong> High digital literacy</li>
+    <li><strong>Attitude:</strong> Abandons apps that require too much setup</li>
+    <li><strong>Environment:</strong> Works from home; easily dysregulated by sensory load</li>
+  </ul>
 
-<h4>Behaviour &amp; skills</h4>
-<ul>
-  <li><strong>Frequency:</strong> Checks phone constantly and often dismisses notifications</li>
-  <li><strong>Skills:</strong> High digital literacy and comfortable with apps</li>
-  <li><strong>Attitude:</strong> Abandons apps that require too much setup</li>
-  <li><strong>Environment:</strong> Works from home but easily dysregulated by sensory load</li>
-</ul>
+  <h4>How Priya would use HealthApp</h4>
+  <ul>
+    <li>Full-screen reminders with a single large "Taken" button</li>
+    <li>Muted colour tones and non-flashing UI</li>
+    <li>A daily medication tracker she can check at a glance</li>
+    <li>In-app messaging to her GP surgery</li>
+  </ul>
 
-<h4>How Priya would use HealthApp</h4>
-<ul>
-  <li>Simple, full-screen reminders with a single large "Taken" button</li>
-  <li>Muted colour tones and a non-flashing UI to avoid sensory overload on difficult days</li>
-  <li>A clear daily medication tracker she can check at a glance</li>
-  <li>In-app messaging to contact her GP surgery without making a phone call</li>
-  <li>Appointment reminders with enough advance notice to feel prepared, not rushed</li>
-</ul>
+  <hr>
 
-<hr>
+  <!-- PERSONA 2 - DEREK -->
+  <h3>3.2 Derek Walsh</h3>
 
-<!-- PERSONA 2 -->
-<h3>3.2 Persona 2 — Derek Walsh</h3>
+  <table>
+    <tr><th>Attribute</th><th>Detail</th></tr>
+    <tr><td>Age</td><td>67</td></tr>
+    <tr><td>Location</td><td>Brecon, Wales (rural)</td></tr>
+    <tr><td>Occupation</td><td>Retired builder</td></tr>
+    <tr><td>Income</td><td>State pension + small savings</td></tr>
+    <tr><td>Family</td><td>Married; two adult children nearby</td></tr>
+    <tr><td>Conditions</td><td>Dyslexia, Hearing impairment, Type 2 Diabetes, Hypertension</td></tr>
+  </table>
 
-<table>
-  <tr><th>Attribute</th><th>Detail</th></tr>
-  <tr><td>Age</td><td>67</td></tr>
-  <tr><td>Location</td><td>Brecon, Wales (rural)</td></tr>
-  <tr><td>Occupation</td><td>Retired builder</td></tr>
-  <tr><td>Income</td><td>State pension + small savings</td></tr>
-  <tr><td>Family</td><td>Married; two adult children nearby</td></tr>
-  <tr><td>Conditions</td><td>Dyslexia, Hearing impairment, Type 2 Diabetes, Hypertension</td></tr>
-</table>
+  <blockquote>"The pharmacist prints everything in tiny writing. My wife reads it for me. I'd rather do it myself."</blockquote>
 
-<blockquote>"The pharmacist prints everything in tiny writing. My wife reads it for me. I'd rather do it myself."</blockquote>
+  <h4>Background</h4>
+  <p>Derek has struggled with reading his whole life and has moderate hearing loss. He manages Type 2 diabetes and hypertension with daily medication. He is comfortable with WhatsApp and calls but rarely uses other apps. He lives rurally, making GP visits require significant planning.</p>
 
-<h4>Background</h4>
-<p>Derek was never formally diagnosed with dyslexia but has struggled with reading his whole life. He has moderate hearing loss and wears a hearing aid. Since retiring, he manages Type 2 diabetes and hypertension which both require daily medication and regular check-ins with his GP. He is comfortable using his smartphone for calls and WhatsApp, but rarely uses other apps. He lives rurally, making GP visits require significant planning and travel.</p>
+  <h4>Goals</h4>
+  <ul>
+    <li>Take medications reliably each morning and evening</li>
+    <li>Understand health information without asking his wife</li>
+    <li>Never miss a GP appointment due to a lost letter</li>
+  </ul>
 
-<h4>Goals</h4>
-<ul>
-  <li>Take medications reliably each morning and evening</li>
-  <li>Understand health information without asking his wife</li>
-  <li>Never miss a GP appointment due to a lost or unread letter</li>
-  <li>Reduce unnecessary trips to the surgery</li>
-</ul>
+  <h4>Pain points</h4>
+  <ul>
+    <li>Medication leaflets and appointment letters are hard to read</li>
+    <li>Phone calls to his GP are difficult with hearing loss</li>
+    <li>Forgets which medications he has taken on a given day</li>
+    <li>Feels embarrassed asking for help with reading</li>
+  </ul>
 
-<h4>Motivations</h4>
-<ul>
-  <li>Maintaining independence as he gets older</li>
-  <li>Not being a burden on his wife or children</li>
-  <li>Staying healthy enough to enjoy retirement</li>
-  <li>Feeling confident and informed at appointments</li>
-</ul>
+  <h4>Behaviour</h4>
+  <ul>
+    <li><strong>Frequency:</strong> Medications twice daily; GP every 1–2 months</li>
+    <li><strong>Skills:</strong> Moderate digital literacy</li>
+    <li><strong>Attitude:</strong> Cautious but motivated if the benefit is clear</li>
+    <li><strong>Environment:</strong> Rural home; wife often present as informal support</li>
+  </ul>
 
-<h4>Pain points</h4>
-<ul>
-  <li>Medication leaflets and appointment letters are hard to read</li>
-  <li>Phone calls to his GP are difficult with hearing loss</li>
-  <li>Forgets which medications he has taken on a given day</li>
-  <li>Feels embarrassed asking for help with reading or forms</li>
-  <li>Lives far from the surgery, making every missed appointment costly</li>
-</ul>
+  <h4>How Derek would use HealthApp</h4>
+  <ul>
+    <li>Audio read-aloud for medication info and appointment details</li>
+    <li>Large-text, high-contrast interface with adjustable text size</li>
+    <li>Icons alongside all text labels</li>
+    <li>Daily tracker with clear morning/evening split</li>
+    <li>Text-based messaging with his GP instead of phone calls</li>
+  </ul>
 
-<h4>Behaviour &amp; skills</h4>
-<ul>
-  <li><strong>Frequency:</strong> Medications twice daily. GP appointment every 1–2 months</li>
-  <li><strong>Skills:</strong> Moderate digital literacy and comfortable with WhatsApp and calls</li>
-  <li><strong>Attitude:</strong> Cautious but motivated if the benefit is clear</li>
-  <li><strong>Environment:</strong> Rural home. Wife often present as informal support</li>
-</ul>
+  <hr>
 
-<h4>How Derek would use HealthApp</h4>
-<ul>
-  <li>Audio read-aloud for all medication information, reminders, and appointment details</li>
-  <li>Large-text, high-contrast interface with adjustable text size</li>
-  <li>Icons and images alongside all text labels so he can confirm actions without relying on reading</li>
-  <li>Daily medication tracker with a clear morning/evening split</li>
-  <li>Appointment reminders with several days' advance notice, displayed prominently on the home screen</li>
-  <li>Text-based messaging with his GP surgery instead of phone calls</li>
-</ul>
-
-<hr>
-
-<!-- PERSONA 3 -->
-<h3>3.3 Persona 3 — Sandra Okafor</h3>
-
-<table>
-  <tr><th>Attribute</th><th>Detail</th></tr>
-  <tr><td>Age</td><td>46</td></tr>
-  <tr><td>Location</td><td>Manchester, England</td></tr>
-  <tr><td>Occupation</td><td>Part-time school administrator</td></tr>
-  <tr><td>Income</td><td>£28,000/yr (household)</td></tr>
-  <tr><td>Family</td><td>Primary caretaker for son Marcus (19)</td></tr>
-  <tr><td>Caring for</td><td>Severe ASD &amp; Epilepsy (Marcus, 19)</td></tr>
-</table>
-
-<blockquote>"Marcus can't tell me when something's wrong. I have to track everything myself and remember it all for his next appointment."</blockquote>
-
-<h4>Background</h4>
-<p>Sandra works part-time to accommodate her caregiving responsibilities for her son Marcus, who has severe ASD and treatment-resistant epilepsy. Marcus cannot manage his own medications or appointments and becomes distressed by unexpected changes. Sandra administers his anti-seizure medications multiple times daily and manages all his appointments with his neurologist and specialist ASD support team. She handles all communication with healthcare professionals on his behalf. She is organised and detail-oriented, but frequently overwhelmed by the volume of health administration she manages alone.</p>
-
-<h4>Goals</h4>
-<ul>
-  <li>Never miss a dose of Marcus's anti-seizure medication</li>
-  <li>Keep an accurate, timestamped medication log for his healthcare team</li>
-  <li>Stay on top of appointments across multiple specialists</li>
-  <li>Communicate efficiently with Marcus's healthcare professionals</li>
-</ul>
-
-<h4>Motivations</h4>
-<ul>
-  <li>Keeping Marcus safe and as well as possible</li>
-  <li>Feeling organised and prepared, not reactive</li>
-  <li>Reducing the mental load of health administration</li>
-  <li>Advocating effectively for Marcus in medical settings</li>
-</ul>
-
-<h4>Pain points</h4>
-<ul>
-  <li>Medication records spread across notebooks, apps, and email</li>
-  <li>Hard to confirm at a glance whether a dose was given on a past day</li>
-  <li>Specialists rarely share information with each other</li>
-  <li>Appointment letters arrive with little notice and no clear summary</li>
-  <li>No single place to manage medications and appointments across multiple clinicians</li>
-</ul>
-
-<h4>Behaviour &amp; skills</h4>
-<ul>
-  <li><strong>Frequency:</strong> Administers medication 3× daily and checks appointments weekly</li>
-  <li><strong>Skills:</strong> High digital literacy. Uses many tools but wants one</li>
-  <li><strong>Attitude:</strong> Pragmatic; will adopt a tool if it genuinely saves time</li>
-  <li><strong>Environment:</strong> Busy household; often inputting on her phone quickly</li>
-</ul>
-
-<h4>How Sandra would use HealthApp</h4>
-<ul>
-  <li>A single-tap "Dose Given" button she can action immediately after administering Marcus's medication</li>
-  <li>A weekly medication history view showing every dose administered, with timestamps, for sharing with Marcus's neurologist</li>
-  <li>Appointment reminders for all of Marcus's specialists consolidated in one calendar view</li>
-  <li>In-app messaging to coordinate across Marcus's GP, neurologist, and ASD support team without playing phone tag</li>
-</ul>
-
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 4. USER JOURNEY MAPS                    -->
+  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="journeys">4. User Journey Maps</h2>
 
-<p>User journey maps translate persona research into a lived experience. By following a specific user through a realistic task, they surface friction points that persona profiles alone cannot reveal. Each map covers a scenario, a step-by-step touchpoint table, and a visualised emotional arc.</p>
+  <p>Each journey map follows a persona through a realistic task, surfacing friction points that persona profiles alone cannot reveal.</p>
 
-<!-- ════════════════════════════════════════ -->
-<!-- JOURNEY 1 — PRIYA                       -->
-<!-- ════════════════════════════════════════ -->
-<h3>4.1 Journey 1 — Priya Sharma</h3>
+  <!-- JOURNEY 1 - PRIYA -->
+  <h3>4.1 Priya Sharma</h3>
 
-<div class="journey-banner banner-navy">
-  <h4>Priya Sharma — 27, Edinburgh — ADHD, ASD, Migraines</h4>
-  <p>Scenario: A difficult morning, staying on top of her medication schedule and messaging her GP about a review</p>
-</div>
+  <div class="journey-banner banner-navy">
+    <h4>Priya Sharma, 27, Edinburgh. ADHD, ASD, Migraines</h4>
+    <p>Scenario: A difficult morning: checking her medication status and messaging her GP about a review</p>
+  </div>
 
-<h4>Scenario &amp; expectations</h4>
-<p>It is a Tuesday morning. Priya woke late after a disrupted night and is feeling dysregulated. She has three medications due today on different schedules and is not certain which she has already taken. She also needs to contact her GP to request a medication review: something she has been putting off for weeks because she dislikes making phone calls. She opens HealthApp hoping to see a clear summary of today's doses, confirm what she has taken, and send a message to her GP without navigating complex menus.</p>
+  <p>Priya woke late after a disrupted night and is not certain which medications she has taken. She also needs to contact her GP to request a medication review, something she has been putting off because she dislikes phone calls. She opens HealthApp expecting a clear summary and a way to message her GP without complex menus.</p>
 
-<h4>Touchpoint map</h4>
+  <table class="journey-table">
+    <tr>
+      <th class="th-navy">Stage</th>
+      <th class="th-navy">Channel</th>
+      <th class="th-navy">User Action</th>
+      <th class="th-navy">Pain Points</th>
+      <th class="th-navy">Emotion</th>
+    </tr>
+    <tr>
+      <td><strong>1. Trigger</strong><br>Missed alarm</td>
+      <td>Smartphone</td>
+      <td>Realises she slept through her reminder. Opens HealthApp.</td>
+      <td>Generic alarms become background noise. Needs persistent reminders.</td>
+      <td><span class="emotion-tag emo-negative">Anxious</span></td>
+    </tr>
+    <tr>
+      <td><strong>2. Home Screen</strong></td>
+      <td>App: Home</td>
+      <td>Dashboard shows today's medications: taken, due, or missed.</td>
+      <td>Previous apps required multiple menus for this view.</td>
+      <td><span class="emotion-tag emo-neutral">Oriented</span></td>
+    </tr>
+    <tr>
+      <td><strong>3. Missed Dose</strong></td>
+      <td>App: Med Tracker</td>
+      <td>Sees morning dose marked missed. Taps for late-dose guidance.</td>
+      <td>Without in-app guidance, she'd search online or skip unsafely.</td>
+      <td><span class="emotion-tag emo-mixed">Unsure</span></td>
+    </tr>
+    <tr>
+      <td><strong>4. Dose Logged</strong></td>
+      <td>App: Med Tracker</td>
+      <td>Takes medication, taps "Mark as Taken". Full-screen confirmation.</td>
+      <td>Extra steps (rating pain, notes) would cause her to abandon the flow.</td>
+      <td><span class="emotion-tag emo-positive">Relieved</span></td>
+    </tr>
+    <tr>
+      <td><strong>5. Schedule</strong></td>
+      <td>App: Med Tracker</td>
+      <td>Checks remaining doses: 1pm and 8pm shown as a simple timeline.</td>
+      <td>Complex calendar views are hard to parse on a difficult day.</td>
+      <td><span class="emotion-tag emo-positive">Informed</span></td>
+    </tr>
+    <tr>
+      <td><strong>6. GP Message</strong></td>
+      <td>App: Messaging</td>
+      <td>Writes a short note to her GP requesting a medication review.</td>
+      <td>Avoided this for weeks because it required a phone call.</td>
+      <td><span class="emotion-tag emo-positive">Empowered</span></td>
+    </tr>
+    <tr>
+      <td><strong>7. Done</strong></td>
+      <td>App: Home</td>
+      <td>Returns to home. One dose taken, two upcoming. Closes app.</td>
+      <td>No remaining friction.</td>
+      <td><span class="emotion-tag emo-positive">Settled</span></td>
+    </tr>
+  </table>
 
-<table class="journey-table">
-  <tr>
-    <th class="th-navy">Stage</th>
-    <th class="th-navy">Channel</th>
-    <th class="th-navy">User Action</th>
-    <th class="th-navy">Pain Points</th>
-    <th class="th-navy">Emotion</th>
-  </tr>
-  <tr>
-    <td><strong>1. Trigger</strong><br>Missed alarm</td>
-    <td>Smartphone</td>
-    <td>Priya realises she slept through her medication reminder. She opens HealthApp to check her status.</td>
-    <td>Generic alarms become background noise over time. She needs a persistent, contextual reminder.</td>
-    <td><span class="emotion-tag emo-negative">Anxious</span></td>
-  </tr>
-  <tr>
-    <td><strong>2. Home Screen</strong><br>Dashboard</td>
-    <td>App — Home</td>
-    <td>The home screen shows today's medications and their status at a glance: taken, due, or missed.</td>
-    <td>Previous apps required multiple menus to see this view, causing her to give up.</td>
-    <td><span class="emotion-tag emo-neutral">Oriented</span></td>
-  </tr>
-  <tr>
-    <td><strong>3. Missed Dose</strong><br>Review</td>
-    <td>App — Med Tracker</td>
-    <td>She sees her first morning medication is marked as missed. She taps it to read guidance on late doses.</td>
-    <td>Without in-app guidance, she would search online or skip the dose without knowing if that is safe.</td>
-    <td><span class="emotion-tag emo-mixed">Unsure</span></td>
-  </tr>
-  <tr>
-    <td><strong>4. Dose Logged</strong><br>Confirmation</td>
-    <td>App — Med Tracker</td>
-    <td>She takes the medication and taps the large "Mark as Taken" button. A full-screen confirmation appears.</td>
-    <td>If confirmation required additional steps (rating pain, adding notes) she would abandon the flow.</td>
-    <td><span class="emotion-tag emo-positive">Relieved</span></td>
-  </tr>
-  <tr>
-    <td><strong>5. Upcoming</strong><br>Schedule view</td>
-    <td>App — Med Tracker</td>
-    <td>She checks remaining doses for the day. Two more are due: 1pm and 8pm. Displayed as a simple timeline.</td>
-    <td>Complex calendar views are difficult for her to parse quickly, especially on a hard day.</td>
-    <td><span class="emotion-tag emo-positive">Informed</span></td>
-  </tr>
-  <tr>
-    <td><strong>6. GP Message</strong><br>Compose</td>
-    <td>App — Messaging</td>
-    <td>She navigates to messaging and writes a short note to her GP asking for a medication review.</td>
-    <td>She avoided this for weeks because it required a phone call. Text removes the barrier entirely.</td>
-    <td><span class="emotion-tag emo-positive">Empowered</span></td>
-  </tr>
-  <tr>
-    <td><strong>7. Resolution</strong><br>End of session</td>
-    <td>App — Home</td>
-    <td>She returns to the home screen. Dashboard shows one dose taken and two upcoming. She closes the app.</td>
-    <td>No remaining friction. Session ended with a clear picture of the day and a message sent.</td>
-    <td><span class="emotion-tag emo-positive">Settled</span></td>
-  </tr>
-</table>
-
-<h4>Emotional arc</h4>
-
-<div class="arc-container">
-  <h4>Emotional Arc — Priya</h4>
-  <div class="arc-chart" style="position: relative;">
-    <div class="arc-y-labels">
-      <span>High</span>
-      <span>Mid</span>
-      <span>Low</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 20%; background: #b71c1c;"></div>
-      <span class="arc-bar-label">Missed alarm</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 50%; background: #666;"></div>
-      <span class="arc-bar-label">Dashboard</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 40%; background: #e65100;"></div>
-      <span class="arc-bar-label">Missed dose</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Dose logged</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Schedule</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">GP message</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Done</span>
+  <div class="arc-container">
+    <h4>Emotional Arc: Priya</h4>
+    <div class="arc-chart">
+      <div class="arc-y-labels"><span>High</span><span>Mid</span><span>Low</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 20%; background: #b71c1c;"></div><span class="arc-bar-label">Missed alarm</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 50%; background: #666;"></div><span class="arc-bar-label">Dashboard</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 40%; background: #e65100;"></div><span class="arc-bar-label">Missed dose</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 80%; background: #2e7d32;"></div><span class="arc-bar-label">Dose logged</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 80%; background: #2e7d32;"></div><span class="arc-bar-label">Schedule</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">GP message</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">Done</span></div>
     </div>
   </div>
-</div>
 
-<div class="insight-box insight-navy">
-  <strong>Key design insight</strong>
-  The steepest drop occurs at Stage 1, before the app is even opened. The reminder system must do more than fire a standard notification. Escalating or persistent reminders that remain visible until acted on would prevent the missed dose that triggers the anxiety spiral. The recovery to high satisfaction by Stage 6 depends directly on in-app messaging existing: without it, Priya has no low-friction route to her GP on a difficult day.
-</div>
+  <div class="insight-box insight-navy">
+    <strong>Key design insight</strong>
+    The steepest drop occurs at Stage 1, before the app is opened. Escalating reminders that persist until acted on would prevent the missed dose that triggers the anxiety spiral. The recovery to high satisfaction by Stage 6 depends on in-app messaging. Without it, Priya has no low-friction route to her GP.
+  </div>
 
-<!-- ════════════════════════════════════════ -->
-<!-- JOURNEY 2 — DEREK                       -->
-<!-- ════════════════════════════════════════ -->
-<h3>4.2 Journey 2 — Derek Walsh</h3>
+  <!-- JOURNEY 2 - DEREK -->
+  <h3>4.2 Derek Walsh</h3>
 
-<div class="journey-banner banner-teal">
-  <h4>Derek Walsh — 67, Brecon, Wales — Dyslexia, Hearing Impairment, Type 2 Diabetes, Hypertension</h4>
-  <p>Scenario: Setting up his medication schedule for the first time and confirming an upcoming GP appointment</p>
-</div>
+  <div class="journey-banner banner-teal">
+    <h4>Derek Walsh, 67, Brecon, Wales. Dyslexia, Hearing Impairment, Type 2 Diabetes, Hypertension</h4>
+    <p>Scenario: First-time setup: entering medications and confirming an upcoming GP appointment</p>
+  </div>
 
-<h4>Scenario &amp; expectations</h4>
-<p>Derek's adult daughter has helped him install HealthApp. Today he is setting it up himself for the first time: entering his two daily medications with the correct times, and checking that his upcoming GP appointment is listed so he will receive a reminder. He is cautious with new apps but motivated. He wants to manage his own medications without relying on his wife. He expects large text, clear icons, and audio support where needed.</p>
+  <p>Derek's daughter helped him install HealthApp. He is setting it up for the first time: entering his two medications and checking his upcoming GP appointment. He expects large text, clear icons, and audio support.</p>
 
-<h4>Touchpoint map</h4>
+  <table class="journey-table">
+    <tr>
+      <th class="th-teal">Stage</th>
+      <th class="th-teal">Channel</th>
+      <th class="th-teal">User Action</th>
+      <th class="th-teal">Pain Points</th>
+      <th class="th-teal">Emotion</th>
+    </tr>
+    <tr>
+      <td><strong>1. First Open</strong></td>
+      <td>App: Home</td>
+      <td>Home screen shows two large tiles: "My Medications" and "My Appointments".</td>
+      <td>Too many options on the first screen would overwhelm him.</td>
+      <td><span class="emotion-tag emo-neutral">Cautious</span></td>
+    </tr>
+    <tr>
+      <td><strong>2. Add Medication</strong></td>
+      <td>App: Med Setup</td>
+      <td>Taps "Add Medication" and types the name using autocorrect suggestions.</td>
+      <td>Spelling medication names is difficult with dyslexia.</td>
+      <td><span class="emotion-tag emo-mixed">Focused</span></td>
+    </tr>
+    <tr>
+      <td><strong>3. Audio Support</strong></td>
+      <td>App: Med Setup</td>
+      <td>Taps the audio icon. A voice reads the field label and explains what to enter.</td>
+      <td>Without audio, he'd enter wrong info or stop and ask his wife.</td>
+      <td><span class="emotion-tag emo-positive">Reassured</span></td>
+    </tr>
+    <tr>
+      <td><strong>4. Set Reminder</strong></td>
+      <td>App: Med Setup</td>
+      <td>Uses the large time-wheel picker to set 8am and 8pm doses.</td>
+      <td>Small text input for time entry would be error-prone.</td>
+      <td><span class="emotion-tag emo-positive">Confident</span></td>
+    </tr>
+    <tr>
+      <td><strong>5. Confirmation</strong></td>
+      <td>App: Med Setup</td>
+      <td>Summary shows both medications with icons (sun for morning, moon for evening).</td>
+      <td>Icons allow visual confirmation without relying on reading.</td>
+      <td><span class="emotion-tag emo-positive">Satisfied</span></td>
+    </tr>
+    <tr>
+      <td><strong>6. Appointment</strong></td>
+      <td>App: Appointments</td>
+      <td>Taps "My Appointments". GP visit on Friday is listed. Confirms reminder is on.</td>
+      <td>Has missed appointments because he couldn't read the letter.</td>
+      <td><span class="emotion-tag emo-positive">Organised</span></td>
+    </tr>
+    <tr>
+      <td><strong>7. GP Message</strong></td>
+      <td>App: Messaging</td>
+      <td>Sends a message asking what to bring to the visit.</td>
+      <td>Phoning is difficult with hearing impairment.</td>
+      <td><span class="emotion-tag emo-positive">Independent</span></td>
+    </tr>
+  </table>
 
-<table class="journey-table">
-  <tr>
-    <th class="th-teal">Stage</th>
-    <th class="th-teal">Channel</th>
-    <th class="th-teal">User Action</th>
-    <th class="th-teal">Pain Points</th>
-    <th class="th-teal">Emotion</th>
-  </tr>
-  <tr>
-    <td><strong>1. First Open</strong><br>Home screen</td>
-    <td>App — Home</td>
-    <td>Derek opens the app for the first time. The home screen shows two large tiles: "My Medications" and "My Appointments".</td>
-    <td>Apps with many options on the first screen overwhelm him. A focused home screen is essential.</td>
-    <td><span class="emotion-tag emo-neutral">Cautious</span></td>
-  </tr>
-  <tr>
-    <td><strong>2. Add Medication</strong><br>Entry screen</td>
-    <td>App — Med Setup</td>
-    <td>He taps "My Medications" then "Add Medication". He types the name of his first tablet using autocorrect suggestions.</td>
-    <td>Spelling medication names is difficult due to his dyslexia. Autocorrect reduces this barrier.</td>
-    <td><span class="emotion-tag emo-mixed">Focused</span></td>
-  </tr>
-  <tr>
-    <td><strong>3. Audio Support</strong><br>Instructions</td>
-    <td>App — Med Setup</td>
-    <td>He taps the audio icon next to a field he does not understand. A clear voice reads the label and explains what to enter.</td>
-    <td>Without audio support, he would enter wrong information or stop entirely and ask his wife.</td>
-    <td><span class="emotion-tag emo-positive">Reassured</span></td>
-  </tr>
-  <tr>
-    <td><strong>4. Set Reminder</strong><br>Time picker</td>
-    <td>App — Med Setup</td>
-    <td>He uses the large time-wheel picker to set 8am for his morning dose. He repeats for his evening medication at 8pm.</td>
-    <td>Small text input fields for time entry are error-prone for him. A visual picker removes friction.</td>
-    <td><span class="emotion-tag emo-positive">Confident</span></td>
-  </tr>
-  <tr>
-    <td><strong>5. Confirmation</strong><br>Summary screen</td>
-    <td>App — Med Setup</td>
-    <td>A summary screen shows both medications with their times. Icons accompany each label (sun for morning, moon for evening).</td>
-    <td>Text-only summaries require reading and verifying. Icons allow quick visual confirmation.</td>
-    <td><span class="emotion-tag emo-positive">Satisfied</span></td>
-  </tr>
-  <tr>
-    <td><strong>6. Appointment</strong><br>Check</td>
-    <td>App — Appointments</td>
-    <td>He taps "My Appointments". His upcoming GP visit on Friday is listed. He confirms the reminder is switched on.</td>
-    <td>He has missed appointments before because he could not read the date on the letter clearly.</td>
-    <td><span class="emotion-tag emo-positive">Organised</span></td>
-  </tr>
-  <tr>
-    <td><strong>7. GP Message</strong><br>Messaging</td>
-    <td>App — Messaging</td>
-    <td>Prompted by seeing the appointment, he sends a short message to his GP asking what he should bring to the visit.</td>
-    <td>Phoning the surgery is difficult with his hearing impairment. Text-based contact is his only low-barrier option.</td>
-    <td><span class="emotion-tag emo-positive">Independent</span></td>
-  </tr>
-</table>
-
-<h4>Emotional arc</h4>
-
-<div class="arc-container">
-  <h4>Emotional Arc — Derek</h4>
-  <div class="arc-chart" style="position: relative;">
-    <div class="arc-y-labels">
-      <span>High</span>
-      <span>Mid</span>
-      <span>Low</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 40%; background: #666;"></div>
-      <span class="arc-bar-label">First open</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 50%; background: #e65100;"></div>
-      <span class="arc-bar-label">Add med</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Audio help</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Reminder</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Confirm</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Appointment</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">GP message</span>
+  <div class="arc-container">
+    <h4>Emotional Arc: Derek</h4>
+    <div class="arc-chart">
+      <div class="arc-y-labels"><span>High</span><span>Mid</span><span>Low</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 40%; background: #666;"></div><span class="arc-bar-label">First open</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 50%; background: #e65100;"></div><span class="arc-bar-label">Add med</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 80%; background: #2e7d32;"></div><span class="arc-bar-label">Audio help</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 80%; background: #2e7d32;"></div><span class="arc-bar-label">Reminder</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">Confirm</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">Appointment</span></div>
+      <div class="arc-bar-group"><div class="arc-bar" style="height: 90%; background: #2e7d32;"></div><span class="arc-bar-label">GP message</span></div>
     </div>
   </div>
-</div>
 
-<div class="insight-box insight-teal">
-  <strong>Key design insight</strong>
-  Derek's journey is uniquely positive in trajectory but this is entirely conditional on the accessibility layer working correctly throughout. The audio support at Stage 3 is the pivotal moment: if that feature did not exist, the setup journey would stall. For Derek, every screen must offer a non-text route through it. This is not an enhancement; it is what makes the app usable for him at all.
-</div>
-
-<!-- ════════════════════════════════════════ -->
-<!-- JOURNEY 3 — SANDRA                      -->
-<!-- ════════════════════════════════════════ -->
-<h3>4.3 Journey 3 — Sandra Okafor</h3>
-
-<div class="journey-banner banner-amber">
-  <h4>Sandra Okafor — 46, Manchester — Caretaker for Marcus (19, Severe ASD &amp; Epilepsy)</h4>
-  <p>Scenario: Managing Marcus's medication schedule and coordinating with his neurologist ahead of an appointment</p>
-</div>
-
-<h4>Scenario &amp; expectations</h4>
-<p>It is a weekday morning. Sandra administers Marcus's first dose of the day and needs to log it in the app so she has an accurate record for his neurologist. She also received a notification that his next neurology appointment is in four days, and she wants to send the neurologist a message flagging that Marcus has had more disturbed nights this week. She expects HealthApp to let her do all of this quickly, on her phone, with minimal typing, while keeping an eye on Marcus.</p>
-
-<h4>Touchpoint map</h4>
-
-<table class="journey-table">
-  <tr>
-    <th class="th-amber">Stage</th>
-    <th class="th-amber">Channel</th>
-    <th class="th-amber">User Action</th>
-    <th class="th-amber">Pain Points</th>
-    <th class="th-amber">Emotion</th>
-  </tr>
-  <tr>
-    <td><strong>1. Morning Dose</strong><br>Reminder</td>
-    <td>Smartphone</td>
-    <td>Sandra receives a medication reminder for Marcus's 8am anti-epileptic dose. She administers it and opens HealthApp.</td>
-    <td>She currently uses a paper chart, which gets misplaced. A reliable digital reminder is the first step to consistency.</td>
-    <td><span class="emotion-tag emo-neutral">Routine</span></td>
-  </tr>
-  <tr>
-    <td><strong>2. Log the Dose</strong><br>Med tracker</td>
-    <td>App — Med Tracker</td>
-    <td>She taps Marcus's medication tile and presses "Mark as Given". The dose is logged with a timestamp.</td>
-    <td>On rushing days, the logging step must be fast: one tap from the home screen, no additional screens.</td>
-    <td><span class="emotion-tag emo-positive">Efficient</span></td>
-  </tr>
-  <tr>
-    <td><strong>3. History</strong><br>Weekly view</td>
-    <td>App — Med Tracker</td>
-    <td>She briefly reviews the weekly tracker to confirm all doses were given correctly over the past seven days.</td>
-    <td>She has no reliable way to confirm whether she gave a dose on a specific past day without a paper chart.</td>
-    <td><span class="emotion-tag emo-positive">Reassured</span></td>
-  </tr>
-  <tr>
-    <td><strong>4. Appointment</strong><br>Alert</td>
-    <td>App — Appointments</td>
-    <td>She notices the appointment reminder tile: "Neurology — Thursday, 4 days away". She taps it for details.</td>
-    <td>Appointment letters often arrive with little notice. An in-app reminder well ahead of the date gives her time to prepare.</td>
-    <td><span class="emotion-tag emo-neutral">Alert</span></td>
-  </tr>
-  <tr>
-    <td><strong>5. Appointment</strong><br>Details</td>
-    <td>App — Appointments</td>
-    <td>The screen shows date, time, location, and consultant name. She confirms the reminder is active.</td>
-    <td>Having all appointment information in one place reduces the risk of misreading a letter or losing the date.</td>
-    <td><span class="emotion-tag emo-positive">Organised</span></td>
-  </tr>
-  <tr>
-    <td><strong>6. Messaging</strong><br>Neurologist</td>
-    <td>App — Messaging</td>
-    <td>She sends a message to Marcus's neurologist flagging his disturbed sleep this week and asking if it is relevant to review.</td>
-    <td>Previously she would write this on a slip of paper to hand over at the appointment, where it was often overlooked.</td>
-    <td><span class="emotion-tag emo-positive">Proactive</span></td>
-  </tr>
-  <tr>
-    <td><strong>7. Resolution</strong><br>End of session</td>
-    <td>App — Home</td>
-    <td>She returns to the home screen. Today's dose is logged, the appointment is confirmed, and her message is sent.</td>
-    <td>No friction remains. The session took under three minutes while she remained present with Marcus.</td>
-    <td><span class="emotion-tag emo-positive">In control</span></td>
-  </tr>
-</table>
-
-<h4>Emotional arc</h4>
-
-<div class="arc-container">
-  <h4>Emotional Arc — Sandra</h4>
-  <div class="arc-chart" style="position: relative;">
-    <div class="arc-y-labels">
-      <span>High</span>
-      <span>Mid</span>
-      <span>Low</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 50%; background: #666;"></div>
-      <span class="arc-bar-label">Reminder</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Log dose</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">History</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 50%; background: #666;"></div>
-      <span class="arc-bar-label">Appt alert</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 80%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Appt details</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Message</span>
-    </div>
-    <div class="arc-bar-group">
-      <div class="arc-bar" style="height: 90%; background: #2e7d32;"></div>
-      <span class="arc-bar-label">Done</span>
-    </div>
+  <div class="insight-box insight-teal">
+    <strong>Key design insight</strong>
+    Derek's journey has no sharp drops, but only because the accessibility layer works correctly at every step. Audio support at Stage 3 is pivotal: without it, setup stalls entirely. Every screen must offer a non-text route through it.
   </div>
-</div>
 
-<div class="insight-box insight-amber">
-  <strong>Key design insight</strong>
-  Sandra's journey is characterised by speed and reliability above all else. The small dip at Stage 4 reflects the anxiety that any appointment reminder creates for a caretaker managing complex care. The app must present appointment information clearly and early. The single-tap dose logging at Stage 2 is the most important interaction for her daily routine: if it requires more effort, she will revert to the paper chart. The messaging feature at Stage 6 closes a genuine gap. It converts informal, easily-lost notes into a timestamped clinical communication.
-</div>
+  <h3>4.3 Cross-Journey Insights</h3>
 
+  <ol>
+    <li><strong>Reminders must be persistent, not passive.</strong> Both users risk missing doses. Priya through attention difficulties, Derek through habit and memory. A notification that disappears when dismissed is insufficient.</li>
+    <li><strong>Logging must be one tap.</strong> Both journeys require dose confirmation in the fewest possible interactions.</li>
+    <li><strong>In-app messaging resolves both journeys.</strong> For Priya it removes phone call anxiety; for Derek it bypasses hearing difficulty. Both journeys end with a message sent to a healthcare professional.</li>
+  </ol>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 5. SKETCHES                             -->
+  <!-- ═══════════════════════════════════════ -->
   <h2 class="section-heading" id="sketches">5. Sketches &amp; Storyboard</h2>
   <p><em>Coming next.</em></p>
   <hr>
@@ -1098,7 +765,7 @@
   <p><em>Coming next.</em></p>
 
   <footer>
-    <p>HealthApp — SOEN 357 UX/UI Case Study — Winter 2026</p>
+    <p>HealthApp - SOEN 357 UX/UI Case Study - Winter 2026</p>
   </footer>
 
 </div>
