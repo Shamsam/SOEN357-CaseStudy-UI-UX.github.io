@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Source Sans 3', sans-serif; background: #fff; color: #222; line-height: 1.75; font-size: 15px; }
@@ -449,7 +451,49 @@
     <tr><td>Consistent bottom navigation</td><td>Reduces cognitive load by keeping navigation predictable across all screens</td></tr>
   </table>
 
-  <h3>6.9 Prototype</h3>
+   <h3>6.9 User Flow Diagrams</h3>
+
+  <p>The two diagrams below map the primary paths a user takes through HealthApp. Solid arrows represent the main flow. Dotted arrows represent alternative or optional paths.</p>
+
+  <h4>Flow 1: Daily Medication Check and Dose Logging</h4>
+
+  <p>This flow covers the most frequent interaction with the app.</p>
+
+  <pre class="mermaid">
+flowchart TD
+    A([Open App]) --> B[Home Screen\nmedication status overview]
+    B --> C[Tracker\ntoday's dose list]
+    B --> D{Dose due?}
+    D -- yes --> E[Reminder\nfull-screen notification]
+    D -- no --> F([All Done\nreturn to Home])
+    E --> G([Mark as Taken\ntimestamp recorded])
+    E -.-> H([Snooze\nremind in 15 min])
+    E -.-> I([Skip Dose\nlogged as skipped])
+    H -.-> D
+    G --> J[Tracker Updated]
+    I --> J
+  </pre>
+
+  <h4>Flow 2: Appointments and GP Messaging</h4>
+
+  <pre class="mermaid">
+flowchart TD
+    A([Home Screen]) --> B[My Appointments\nupcoming visits list]
+    A --> C[Messages\nlist of conversations]
+
+    B --> D[Appointment Card\ndate, doctor, location]
+    D --> E([Reminder Toggle\non / off])
+    D -.-> C
+    B --> F[+ Add Appointment\nnew entry form]
+    F --> G([Saved])
+
+    C --> H[Select Doctor\ne.g. Dr. Patel]
+    H --> I[Chat Thread\nmessage history + audio]
+    I --> J[Compose Message\nautocorrect enabled]
+    J --> K([Message Sent])
+  </pre>
+
+  <h3>6.10 Prototype</h3>
 
   <p>A clickable prototype was built in Figma connecting all seven screens above. Navigation between screens follows the paths outlined in the sketches (Section 5).</p>
 
