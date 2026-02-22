@@ -461,14 +461,14 @@
 
   <pre class="mermaid">
 flowchart TD
-    A([Open App]) --> B[Home Screen\nmedication status overview]
-    B --> C[Tracker\ntoday's dose list]
+    A([Open App]) --> B[Home Screen medication status overview]
+    B --> C[Tracker today's dose list]
     B --> D{Dose due?}
-    D -- yes --> E[Reminder\nfull-screen notification]
-    D -- no --> F([All Done\nreturn to Home])
-    E --> G([Mark as Taken\ntimestamp recorded])
-    E -.-> H([Snooze\nremind in 15 min])
-    E -.-> I([Skip Dose\nlogged as skipped])
+    D -- yes --> E[Reminder full-screen notification]
+    D -- no --> F([All Done return to Home])
+    E --> G([Mark as Taken timestamp recorded])
+    E -.-> H([Snooze remind in 15 min])
+    E -.-> I([Skip Dose logged as skipped])
     H -.-> D
     G --> J[Tracker Updated]
     I --> J
@@ -478,24 +478,24 @@ flowchart TD
 
   <pre class="mermaid">
 flowchart TD
-    A([Home Screen]) --> B[My Appointments\nupcoming visits list]
-    A --> C[Messages\nlist of conversations]
+    A([Home Screen]) --> B[My Appointments upcoming visits list]
+    A --> C[Messages list of conversations]
 
-    B --> D[Appointment Card\ndate, doctor, location]
-    D --> E([Reminder Toggle\non / off])
+    B --> D[Appointment Card date, doctor, location]
+    D --> E([Reminder Toggle on / off])
     D -.-> C
-    B --> F[+ Add Appointment\nnew entry form]
+    B --> F[+ Add Appointment new entry form]
     F --> G([Saved])
 
-    C --> H[Select Doctor\ne.g. Dr. Patel]
-    H --> I[Chat Thread\nmessage history + audio]
-    I --> J[Compose Message\nautocorrect enabled]
+    C --> H[Select Doctor e.g. Dr. Patel]
+    H --> I[Chat Thread message history + audio]
+    I --> J[Compose Message autocorrect enabled]
     J --> K([Message Sent])
   </pre>
 
   <h3>6.10 Prototype</h3>
 
-  <p>A clickable prototype was built in Figma connecting all seven screens above. The prototype supports tap-based navigation between screens, mirroring the user flows documented in Section 6.9.</p>
+  <p>A clickable prototype was built in Figma connecting all seven screens above. The prototype supports tap-based navigation between screens.</p>
 
   <p>The prototype closely resembles the wireframes by design. Keeping the prototype visually restrained, with a simple palette and no reliance on colour coding, ensures it remains accessible to users with low vision, colour blindness, or sensory sensitivities.</p>
 
