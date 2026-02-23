@@ -95,6 +95,7 @@
     <h1>HealthApp</h1>
     <div class="subtitle">UX/UI Design of a Health Companion Super App</div>
     <div class="meta">SOEN 357 - Winter 2026 | Mini Project</div>
+    <div class="meta">Student ID: 40280883</div>
   </div>
 
   <div class="toc">
@@ -121,10 +122,10 @@
     <li>Managing appointments across multiple healthcare professionals</li>
     <li>Understanding health information often written in complex medical language</li>
   </ul>
-  <p>Someone with <strong>ADHD</strong> may struggle with the self-regulation medication adherence requires. An older adult with <strong>dyslexia</strong> may be unable to read a medication leaflet. Existing tools (generic reminder apps, text-heavy patient portals, paper-based systems) rarely account for this complexity.</p>
+  <p>The self-regulation that medication adherence requires may be difficult for someone with ADHD. A medication leaflet may be difficult for an older adult with dyslexia to read. This complexity is rarely taken into account by the tools that are currently available (such as paper-based systems, text-heavy patient portals, and generic reminder apps).</p>
 
   <h3>1.2 The Solution</h3>
-  <p><strong>HealthApp</strong> is a mobile health management application designed to close this gap. It focuses on five core capabilities:</p>
+  <p><strong>HealthApp</strong> is a mobile health management application designed for five core capabilities:</p>
   <table>
     <tr><th>Feature</th><th>Description</th></tr>
     <tr><td><strong>Medication management</strong></td><td>Add and manage medications, dosages, and schedules in one place</td></tr>
@@ -145,7 +146,7 @@
   <hr>
 
   <h2 class="section-heading" id="research">2. User Research</h2>
-  <p>We used two complementary research methods, surveys and semi-structured interviews, designed to be accessible and multi-channel for a population that faces barriers with standard digital tools.</p>
+  <p>We used two research methods: surveys and semi-structured interviews. Which are designed to be as accessible as possible for a population that faces barriers with standard digital tools.</p>
 
   <h3>2.1 Surveys</h3>
   <h4>Distribution channels</h4>
@@ -157,13 +158,13 @@
   </ul>
   <h4>Question types</h4>
   <ul>
-    <li><strong>Spectrum answers</strong> (Likert scales): frequency, satisfaction, difficulty</li>
+    <li><strong>Spectrum answers</strong>: frequency, satisfaction, difficulty</li>
     <li><strong>Multiple choice</strong>: demographics, conditions, device usage, preferences</li>
     <li><strong>Optional open-text or voice-input</strong>: for more detailed responses</li>
   </ul>
 
   <h3>2.2 Interviews</h3>
-  <p>Semi-structured interviews (30-45 minutes) were offered via video call (with captions), phone, or in-person. Participants included people managing multiple chronic conditions and older adults with lower digital confidence. Topics covered daily routines, missed medications, GP communication challenges, current tools, and reactions to design concepts.</p>
+  <p>Semi-structured interviews (30-45 minutes) were offered via video call (with captions), phone, or in-person. Topics covered daily routines, missed medications, GP communication challenges, current tools, and reactions to design concepts.</p>
 
   <h3>2.3 Survey Results (12 responses)</h3>
   <table>
@@ -292,7 +293,7 @@
   <hr>
 
   <h2 class="section-heading" id="journeys">4. User Journey Maps</h2>
-  <p>Each journey map follows a persona through a realistic task, surfacing friction points that persona profiles alone cannot reveal.</p>
+  <p>Each journey map follows a persona through a realistic task, showing pain points.</p>
 
   <h3>4.1 Priya Sharma</h3>
   <div class="journey-banner banner-navy">
@@ -325,7 +326,7 @@
   </div>
   <div class="insight-box insight-navy">
     <strong>Key design insight</strong>
-    The steepest drop occurs at Stage 1, before the app is opened. Escalating reminders that persist until acted on would prevent the missed dose that triggers the anxiety spiral. The recovery to high satisfaction by Stage 6 depends on in-app messaging. Without it, Priya has no low-friction route to her GP.
+    The steepest drop occurs at Stage 1, before the app is opened. A persisting reminder would have been able to prevent the missed dose that triggered the anxiety. The recovery to high satisfaction by Stage 6 depends on in-app messaging. Without it, Priya would have been annoyed to contact her GP.
   </div>
 
   <h3>4.2 Derek Walsh</h3>
@@ -359,14 +360,14 @@
   </div>
   <div class="insight-box insight-teal">
     <strong>Key design insight</strong>
-    Derek's journey has no sharp drops, but only because the accessibility layer works correctly at every step. Audio support at Stage 3 is pivotal: without it, setup stalls entirely. Every screen must offer a non-text route through it.
+    Derek's journey has no big pain point, but only because the accessibility layer allows him to interact easily with the app at every step. Audio support at Stage 3 allows him to successfullly complete his setup. Every screen must offer a non-text route through it.
   </div>
 
   <h3>4.3 Cross-Journey Insights</h3>
   <ol>
     <li><strong>Reminders must be persistent, not passive.</strong> Both users risk missing doses. Priya through attention difficulties, Derek through habit and memory. A notification that disappears when dismissed is insufficient.</li>
     <li><strong>Logging must be one tap.</strong> Both journeys require dose confirmation in the fewest possible interactions.</li>
-    <li><strong>In-app messaging resolves both journeys.</strong> For Priya it removes phone call anxiety; for Derek it bypasses hearing difficulty. Both journeys end with a message sent to a healthcare professional.</li>
+    <li><strong>In-app messaging resolves both journeys.</strong> Both journeys end with a message sent to a healthcare professional.</li>
   </ol>
 
   <hr>
@@ -405,43 +406,43 @@
 
   <h3>6.1 Home Screen</h3>
 
-  <p>The home screen acts as a central hub. A personalised greeting and today's date orient the user immediately. Below, a medication status card shows how many doses have been taken out of the day's total, with a progress bar for quick visual feedback. Four large tiles (My Medications, My Appointments, Messages, Settings) provide one-tap access to every major feature. A persistent bottom navigation bar offers shortcuts to Home, Tracker, and Settings from any screen.</p>
+  <p>The home screen acts as a central hub. A medication status card shows how many doses have been taken out of the day's total, with a progress bar for quick visual feedback. Four large tiles (My Medications, My Appointments, Messages, Settings) provide one-tap access to every major feature. A persistent bottom navigation bar offers shortcuts to Home, Tracker, and Settings from any screen.</p>
 
   <img src="HomeScreen.png" alt="Home screen wireframe showing greeting, medication status progress bar, and four navigation tiles" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
   <h3>6.2 My Medications</h3>
 
-  <p>This screen lists all active medications with their dosage and form (e.g. "1 tablet"). Sun and moon icons beside each entry indicate whether the dose is scheduled for morning, evening, or both, allowing visual confirmation without reading. A prominent "+ Add Medication" button sits at the top. An audio icon in the header enables read-aloud of the full list.</p>
+  <p>This screen lists all active medications with their dosage and form (e.g. "1 tablet"). An audio icon in the header enables read-aloud of the full list.</p>
 
   <img src="MyMedications.png" alt="My Medications screen showing a list of three medications with sun and moon schedule icons" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
   <h3>6.3 Add Medication</h3>
 
-  <p>The add medication form is structured into three clearly labelled sections: Medication Name (with autocomplete suggestions to assist users with dyslexia), Dosage (split into Amount and Unit fields), and Schedule (using large sun/moon cards for morning and evening times). Day-of-week selectors allow flexible scheduling. Each section has its own audio icon so users can hear field labels read aloud. A single "Save Medication" button completes the flow.</p>
+  <p>Each section has its own audio icon so users can hear field labels read aloud. A single "Save Medication" button completes the flow.</p>
 
   <img src="AddMedication.png" alt="Add Medication form with name field, dosage inputs, and morning/evening schedule cards" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
   <h3>6.4 Medication Reminder Notification</h3>
 
-  <p>When a dose is due, a full-screen notification appears showing the medication name, dosage instruction, and current time. The layout is deliberately simple: a large pill icon, bold text, and a single prominent "Mark as Taken" button. Two secondary options ("Remind me in 15 min" and "Skip this dose") sit below. This screen directly addresses the research finding that standard alarms are too easy to dismiss.</p>
+  <p>When a dose is due, a full-screen notification appears showing the medication name, dosage instruction, and current time. This screen directly addresses the research finding that standard alarms are too easy to dismiss.</p>
 
   <img src="Notification.png" alt="Full-screen medication reminder with large Mark as Taken button and options to snooze or skip" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
   <h3>6.5 Tracker</h3>
 
-  <p>The tracker organises the day's doses into Morning, Afternoon, and Evening sections. Each medication card shows the name, dosage, and status. Completed doses display a filled checkmark and timestamp. Pending doses show a "Mark as Taken" button. Date navigation arrows at the top let users review past days, and a "View Monthly History" link at the bottom connects to a calendar view for longer-term adherence tracking.</p>
+  <p>Each medication card shows the name, dosage, and status. Completed doses display a filled checkmark and timestamp. Pending doses show a "Mark as Taken" button.</p>
 
   <img src="Tracker.png" alt="Daily tracker screen divided into morning, afternoon, and evening sections with dose status" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
   <h3>6.6 My Appointments</h3>
 
-  <p>Upcoming appointments are displayed as cards showing the date, time, doctor name, specialty, and location. Each card includes an audio icon for read-aloud and a reminder toggle. The "+ Add Appointment" button at the top mirrors the medication screen layout for consistency. This screen directly supports Derek's journey, where missed appointments stemmed from lost or unreadable letters.</p>
+  <p>Each card includes an audio icon for read-aloud and a reminder toggle. The "+ Add Appointment" button at the top mirrors the medication screen layout for consistency. This screen directly supports Derek's journey, where missed appointments stemmed from lost or unreadable letters.</p>
 
   <img src="Appointments.png" alt="Appointments screen listing two upcoming visits with reminder toggles and audio icons" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
   <h3>6.7 Messaging</h3>
 
-  <p>The messaging screen uses a familiar chat layout. Messages from the healthcare professional appear on the left in light bubbles; the user's messages appear on the right in dark bubbles. Timestamps are shown below each message. An audio icon in the header allows the full conversation to be read aloud. The text input field notes that autocorrect is enabled, supporting users with dyslexia. This feature resolves the phone-call barrier identified for both personas.</p>
+  <p>The messaging screen uses a familiar chat layout. Timestamps are shown below each message. An audio icon in the header allows the full conversation to be read aloud. The text input field notes that autocorrect is enabled, supporting users with dyslexia. This feature resolves the phone-call barrier identified for both personas.</p>
 
   <img src="Messaging.png" alt="Chat conversation with Dr. Patel showing appointment confirmation and user reply" style="max-width: 340px; display: block; margin: 1rem auto; border: 1px solid #ddd; border-radius: 4px;">
 
@@ -540,19 +541,19 @@ flowchart TD
 
   <h3>7.5 Analysis and Iteration</h3>
 
-  <p>Findings would be grouped by task. Any task with a completion rate below 80% or repeated hesitations from multiple participants would flag a usability issue. For example, if participants struggle to find the messaging screen, the home screen tile layout would be revised. The updated prototype would then be retested with a smaller group to confirm the fix.</p>
+  <p>Any task with a completion rate below 80% or repeated hesitations from multiple participants would flag a usability issue. For example, if participants struggle to find the messaging screen, the home screen tile layout would be revised. The updated prototype would then be retested with a smaller group to confirm the fix.</p>
 
   <h2 class="section-heading" id="reflection">8. Reflection</h2>
 
   <h3>8.1 How the Process Shaped the Product</h3>
 
-  <p>Following a structured UX process forced design decisions to come from evidence rather than assumption. Before conducting surveys and interviews, we assumed colour-coded reminders would be a key feature. The research revealed that our target users either could not perceive colour reliably or found it visually overwhelming, which led us to a greyscale, icon-first approach instead. Without that early research phase, the product would have failed the people it was built for.</p>
+  <p>Following a structured UX process forced design decisions to come from evidence rather than assumption. For example, we initially had assumed colour-coded reminders would be a key feature. The research revealed that our target users either could not perceive colour reliably or found it visually overwhelming, which led us to a greyscale, text/icon approach instead.</p>
 
   <p>Priya's phone call anxiety made in-app messaging non-negotiable. Derek's dyslexia made audio read-aloud essential on every content screen. Journey mapping then exposed gaps the personas alone did not reveal, such as the need for a snooze option on the reminder screen, which only became obvious when we walked through Priya's scenario step by step.</p>
 
   <h3>8.2 Challenges</h3>
 
-  <p>The biggest challenge was designing for two very different user groups at once. Priya is digitally confident and wants minimal friction. Derek needs extra scaffolding like audio and autocomplete just to complete basic tasks. Early wireframes that suited one group frustrated the other. We resolved this by making accessibility features (audio icons, large tap targets, icon labels) available on every screen by default rather than hiding them behind a settings toggle. This way Derek benefits immediately, and Priya is not disrupted because the features are unobtrusive.</p>
+  <p>The biggest challenge was designing for two very different user groups at once. Both personas have different needs and different expectations from a healthcare app. Early wireframes that suited one group frustrated the other. We resolved this by making accessibility features (audio icons, large tap targets, icon labels) available on every screen by default rather than hiding them behind a settings toggle. This way Derek benefits immediately, and Priya is not disrupted because the features are unobtrusive.</p>
 
   <p>The initial sketches included screens which were much more cluttered with too many options and buttons on every screen. We cut these early to keep the wireframes focused on the five core capabilities the research actually validated.</p>
 
